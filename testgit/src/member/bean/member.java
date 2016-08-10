@@ -1,4 +1,4 @@
-package main;
+package member.bean;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,17 +9,29 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import Now.DTO.memberDTO;
+
 
 @Controller
-public class main {
+public class member {
 	
 	@Autowired
 	private SqlMapClientTemplate sqlMap;
 	
-	@RequestMapping("firstview.now")
+	@RequestMapping("joinus.now")
 	
-	public String firstview(){
-		return "/main/firstview.jsp";
+	public String joinus(){
+		return "/member/joinus.jsp";
+	}
+	
+	
+	@RequestMapping("joinuspro.now")
+	
+	public String joinuspro(memberDTO dto){
+		
+		sqlMap.insert("insertUser", dto);
+		
+		return "/member/joinus.jsp";
 	}
 
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sqlMap>
+	<typeAlias alias="member" type="Now.DTO.memberDTO" />
+	
+	<insert id="joinmember" parameterClass="member">
+		insert into nowmember (NICKNAME,PW,EMAIL)
+		values(#nickname#,#pw#,#email#)
+	</insert>
+	
+	
+	</sqlMap>
