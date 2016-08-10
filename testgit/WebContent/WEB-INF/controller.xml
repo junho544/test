@@ -11,31 +11,14 @@
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context-3.0.xsd"
 	>
-	<!-- 예지 -->
-	<context:component-scan base-package="record.bean" />
-	
-	
-	<!-- 현준 -->
-	<context:component-scan base-package="test" />
-	
-	<!-- 봉준 -->
-	<context:component-scan base-package="scheduler.bean" />
 
-	<!-- 간지남 주노플로 -->
+	<!-- 준호
 	<context:component-scan base-package="opd.bean" />	
 	<context:component-scan base-package="test.bean" />	
 	<context:component-scan base-package="upload.bean" />
 	<context:component-scan base-package="insert.bean" />
-	
-	<!-- 경민 -->
-	<context:component-scan base-package="login.bean"/>
-	<context:component-scan base-package="register.bean"/>
-	<context:component-scan base-package="approval.bean"/>
-	<context:component-scan base-package="mainNotice.bean"/>
-	<context:component-scan base-package="authority.bean" />
 
-	<!-- 현정 -->
-	<context:component-scan base-package="com.spring.vertx.controller" />	
+	<context:component-scan base-package="com.spring.vertx.controller" />	 -->
 			
 	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
 		<property name="configLocation" value="/WEB-INF/sqlMapConfig.xml"/>

@@ -4,24 +4,8 @@
 <sqlMapConfig>
 
 	<settings enhancementEnabled="true" useStatementNamespaces="true" />
-	<sqlMap resource="/sql/schedulerSQL.xml" />
-	<sqlMap resource="/sql/comunitySQL.xml"/>
 	
-	<!-- 현준 -->
-	<sqlMap resource="/sql/opendeskSQL.xml"/>
+<!-- 	<sqlMap resource="/sql/comunitySQL.xml"/> -->
 	
-	<!-- 경민 -->
-	<sqlMap resource="/sql/infoSQL.xml"/>
-	<sqlMap resource="/sql/approvalSQL.xml"/>
-	<sqlMap resource="/sql/workerSQL.xml"/>
-	<sqlMap resource="/sql/noticeSQL.xml"/>
-	<sqlMap resource="/sql/authoritySQL.xml"/>
-	
-	<!-- 현정 -->
-	<sqlMap resource="/sql/sampleSQL.xml"/>
-	
-	<!-- 예지 -->
-	<sqlMap resource="/sql/recordSQL.xml"/>
-	<sqlMap resource="/sql/pers_supSQL.xml"/>
 	
 </sqlMapConfig>
