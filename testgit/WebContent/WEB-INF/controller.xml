@@ -12,13 +12,8 @@
 	http://www.springframework.org/schema/context/spring-context-3.0.xsd"
 	>
 
-	<!-- 준호
-	<context:component-scan base-package="opd.bean" />	
-	<context:component-scan base-package="test.bean" />	
-	<context:component-scan base-package="upload.bean" />
-	<context:component-scan base-package="insert.bean" />
-
-	<context:component-scan base-package="com.spring.vertx.controller" />	 -->
+	<context:component-scan base-package="main_layout.bean" />	
+	
 			
 	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
 		<property name="configLocation" value="/WEB-INF/sqlMapConfig.xml"/>
