@@ -38,12 +38,13 @@
 			에 따라 컨트롤러 이름이 달라진다.(하나만 쓸때, 기본값)
 			ex)spring-servlet.xml
 		 -->
-		<url-pattern>*.hou</url-pattern>
+		<url-pattern>*.now</url-pattern>
 	</servlet-mapping>
-	<error-page>
+<!-- 	<error-page>
 	    <error-code>404</error-code>
 	    <location>/error/404.jsp</location>
 	</error-page>
+ -->
 
   
 </web-app>

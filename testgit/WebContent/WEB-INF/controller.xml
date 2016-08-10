@@ -50,7 +50,7 @@
           destroy-method="close"
           p:driverClassName="oracle.jdbc.driver.OracleDriver"
           p:url="jdbc:oracle:thin:@masterkh.iptime.org:7000:orcl"
-          p:username="web19" p:password="web19" />
+          p:username="web01" p:password="web01" />
           
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="maxUploadSize" value="-1" />
