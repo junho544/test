@@ -79,7 +79,7 @@
 url = "/testgit/popup_1.now";
         
         
-        window.open(url, "create", 'left='+(screen.availWidth-500)/2+',top='+(screen.availHeight-350)/2+', width=500px,height=350px');
+        window.open(url, "create", 'left='+(screen.availWidth-500)/2+',top='+(screen.availHeight-500)/2+', width=500px,height=500px');
     }
 </script>
 
