@@ -29,7 +29,7 @@ public class member {
 	
 	public String joinuspro(memberDTO dto){
 		
-		sqlMap.insert("insertUser", dto);
+		sqlMap.insert("now.insertUser", dto);
 		
 		return "/member/joinus.jsp";
 	}
