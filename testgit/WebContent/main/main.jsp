@@ -30,9 +30,36 @@
         <div class="row">
             <div class="box">
                 <div class="col-lg-12">
+                <table>
+                <tr>
+                <td rowspan="2" width="200">
+                <img src="/testgit/image/profile.jpg"/>
+                </td>
+                <td width="300">
+                <p>${member.nickname}</p>
+                ${member.email}
                 
+                </td>
+                
+                <td rowspan="2">
+                  <div class="form-group">
+    <label for="exampleTextarea">${member.nickname}님의 상태메세지</label>
+    <textarea class="form-control" id="exampleTextarea" rows="5" 
+    cols="60" style="resize: none;" placeholder="지금 무슨 생각을 하고 계신가요?"></textarea>
+  </div>
+  <button style="margin-top:30px;" type="submit" class="btn btn-primary btn-lg btn-block">업데이트</button>
+                </td>
+                
+                </tr>
+                <tr>
+                <td>
+                <a href="">프로필 수정하기</a>
+                </td>
+                </tr>
+                </table>
 
-${member.nickname},${member.pw},${member.email}
+
+
 
                
 
@@ -78,7 +105,7 @@ ${member.nickname},${member.pw},${member.email}
                 
 
                 
-                
-
+    <script src="testgit/js/jquery.js"></script>
+    <script src="testgit/js/bootstrap.min.js"></script>
 </body>
 </html>
