@@ -10,6 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
+import Now.DTO.memberDTO;
+
+
 @Controller
 public class main {
 	
@@ -24,7 +27,19 @@ public class main {
 	}
 	
 	@RequestMapping("main.now")
-	public String main(){
+	public String main(memberDTO dto,HttpServletRequest request, HttpSession session){
+		
+		session = request.getSession();
+		session.setAttribute("nickname", dto.getNickname());
+		
+		String nickname=(String)session.getAttribute("nickname");
+		System.out.println(nickname="nickname");
+		dto.setNickname(nickname);
+		memberDTO list =(memberDTO)sqlMap.queryForObject("sampleSQL.getMember", dto);
+		
+		
+		request.setAttribute("member", list);
+		
 		
 		return "/main/main.jsp";
 	}

@@ -14,4 +14,10 @@
 		select count(*) from nowmember where nickname=#nickname# and pw=#pw#
 	</select>
 	
+	
+    <select id="getMember" parameterClass="Now.DTO.memberDTO" resultClass="Now.DTO.memberDTO">
+		select * from nowmember where nickname=#nickname#
+	</select>
+	
+	
 	</sqlMap>
