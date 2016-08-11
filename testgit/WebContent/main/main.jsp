@@ -3,6 +3,61 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
+<script>
+$(document).ready(function() {
+	var obj=new Object();
+	obj.boast_num=${article.boast_num};
+	obj.pageNum=${pageNum};
+	$.ajax({
+		type : "post",
+		url : "boast_comment.gd",
+		data : JSON.stringify(obj),
+		success :test,
+	});
+	function test(aaa){
+		
+		$("#form").html(aaa);
+	}
+	$("#getcomment").bind("click",function(){	// 코멘트 입력시
+		obj=new Object();
+		obj.comment=document.getElementById("comment").value;
+		obj.boast_num=${article.boast_num};
+		obj.pageNum=${pageNum};
+		$.ajax({
+			type : "post",
+			url : "boast_comment.gd",
+			data : JSON.stringify(obj),
+			success :test2,
+			error : when
+		});
+		function test2(aaa){
+		
+			$("#form").html(aaa);
+		}
+		function when(){
+			alert("에러");
+		}
+	});	
+	
+	$('#change').bind('click', function(){
+		var f = document.test;
+		f.action="boast_change.gd",
+		f.method="post",
+		f.submit();
+	});
+	$('#delete').bind('click', function(){
+		var f = document.test;
+		f.action="boast_delete.gd",
+		f.method="post",
+		f.submit();
+	});
+	$('#getcomment').bind('click',function(){
+		$('#comment').val(''); 
+	});
+});
+</script>
+
+
 
 <html>
 <head>
@@ -19,7 +74,7 @@
 
 
 
-<form>
+<form method="post" name="commentform" action="">
 
  <div class="container">
 
@@ -44,10 +99,10 @@
                 <td rowspan="2">
                   <div class="form-group">
     <label for="exampleTextarea">${member.nickname}님의 상태메세지</label>
-    <textarea class="form-control" id="exampleTextarea" rows="5" 
+    <textarea class="form-control" rows="5" id="comment" name="comment"
     cols="60" style="resize: none;" placeholder="지금 무슨 생각을 하고 계신가요?"></textarea>
   </div>
-  <button style="margin-top:30px;" type="submit" class="btn btn-primary btn-lg btn-block">업데이트</button>
+  <button style="margin-top:30px;" id="getcomment" type="botton" class="btn btn-primary btn-lg btn-block">업데이트</button>
                 </td>
                 
                 </tr>
@@ -91,7 +146,7 @@
 
 
 
-               
+               <div id="form"></div> 
 
                
                 
