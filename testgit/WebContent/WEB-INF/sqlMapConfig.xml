@@ -3,12 +3,12 @@
 	"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
 <sqlMapConfig>
 
-	<!-- <settings enhancementEnabled="true" useStatementNamespaces="true" /> -->
+<settings enhancementEnabled="true" useStatementNamespaces="true" />
 	
 <!-- <sqlMap resource="/sql/comunitySQL.xml"/> -->
 
 	<sqlMap resource="/sql/git.xml"/>
 	<sqlMap resource="/sql/git_Park.xml"/>
-	
+	<sqlMap resource="/sql/memberSQL.xml"/>
 	
 </sqlMapConfig>

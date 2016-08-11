@@ -48,35 +48,5 @@
 	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
 		<property name="order" value="0" />
 	</bean>
-	
 
-<!-- 봉준 - 달력 관련 인코딩 빈 -->
- 
-   <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-     <property name="messageConverters">
-        <list>
-            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
-                <property name="supportedMediaTypes">
-                    <list>
-                        <value>text/html;charset=UTF-8</value>
-                    </list>
-                </property>
-            </bean>
-        </list>
-     </property>
-   </bean>
-
-<!-- 기타 추가 하고 싶은 것들을 이름 달고 추가하면 됩니다. -->
-
-<!-- 
-<bean id="exceptionMapping" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
-	<property name="exceptionMappings">
-		<props>
-			<prop key="SQLException">error/sql.jsp</prop>
-		</props>
-	</property>
-	<property name="defaultErrorView" value="error/default.jsp" />
-</bean>
-
- -->	
 </beans>
