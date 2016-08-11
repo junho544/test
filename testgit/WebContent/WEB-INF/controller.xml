@@ -14,8 +14,9 @@
 
 	<context:component-scan base-package="main_layout.bean" />
 	<context:component-scan base-package="main"/>
-	<context:component-scan base-package="member.bean"/>	
-	
+	<context:component-scan base-package="member.bean"/>
+		
+	<context:component-scan base-package="com.spring.vertx" />	
 			
 	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
 		<property name="configLocation" value="/WEB-INF/sqlMapConfig.xml"/>

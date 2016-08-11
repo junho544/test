@@ -11,10 +11,10 @@ public class layout {
 	@Autowired
 	private SqlMapClientTemplate sqlMap;
 	
-	@RequestMapping("popup.now")
+	/*@RequestMapping("popup.now")
 	public String main(){
 		return "/main_layout/mainLayout.jsp";
-	}
+	}*/
 	
 	@RequestMapping("popup_1.now")
 	public String main_1(){
