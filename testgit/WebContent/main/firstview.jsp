@@ -40,7 +40,7 @@
 
 <div class="input-group input-group-lg">
   <span class="input-group-addon" id="sizing-addon1">Nickname</span>
-  <input type="text" class="form-control" placeholder="닉네임을 입력해주세요" aria-describedby="sizing-addon1">
+  <input size="55" type="text" class="form-control" placeholder="닉네임을 입력해주세요" aria-describedby="sizing-addon1">
 </div>
 
 </td>
@@ -51,7 +51,7 @@
 
 <div class="input-group input-group-lg">
   <span class="input-group-addon" id="sizing-addon1">Password</span>
-  <input type="password" class="form-control" placeholder="비밀번호를 입력해주세요" aria-describedby="sizing-addon1">
+  <input size="55" type="password" class="form-control" placeholder="비밀번호를 입력해주세요" aria-describedby="sizing-addon1">
 </div>
 
 </td>

@@ -19,6 +19,7 @@ public class main {
 	@RequestMapping("firstview.now")
 	
 	public String firstview(){
+		
 		return "/main/firstview.jsp";
 	}
 
