@@ -76,7 +76,7 @@
 
 <script language="JavaScript">
     function openCreate() {
-url = "/testgit/popup.now";
+url = "/testgit/popup_1.now";
         
         
         window.open(url, "create", 'left='+(screen.availWidth-500)/2+',top='+(screen.availHeight-350)/2+', width=500px,height=350px');
