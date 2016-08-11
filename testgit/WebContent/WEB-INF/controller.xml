@@ -12,7 +12,9 @@
 	http://www.springframework.org/schema/context/spring-context-3.0.xsd"
 	>
 
-	<context:component-scan base-package="main_layout.bean" />	
+	<context:component-scan base-package="main_layout.bean" />
+	<context:component-scan base-package="main"/>
+	<context:component-scan base-package="member.bean"/>	
 	
 			
 	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
