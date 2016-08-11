@@ -15,7 +15,7 @@
 	</select>
 	
 	
-    <select id="getMember" parameterClass="Now.DTO.memberDTO" resultClass="Now.DTO.memberDTO">
+    <select id="getMember" parameterClass="member" resultClass="member">
 		select * from nowmember where nickname=#nickname#
 	</select>
 	

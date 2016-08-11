@@ -27,17 +27,17 @@ public class main {
 	}
 	
 	@RequestMapping("main.now")
-	public String main(memberDTO dto,HttpServletRequest request, HttpSession session){
+	public String main(memberDTO dto, HttpServletRequest request, HttpSession session){
 		
 		session = request.getSession();
 		session.setAttribute("nickname", dto.getNickname());
 		
-		String nickname=(String)session.getAttribute("nickname");
-		System.out.println(nickname="nickname");
+		String nickname=(String)session.getAttribute("memNickname");
+		System.out.println(nickname);
 		dto.setNickname(nickname);
+	
 		memberDTO list =(memberDTO)sqlMap.queryForObject("sampleSQL.getMember", dto);
-		
-		
+
 		request.setAttribute("member", list);
 		
 		
