@@ -19,19 +19,42 @@ public class member {
 	private SqlMapClientTemplate sqlMap;
 	
 	@RequestMapping("joinus.now")
-	
 	public String joinus(){
 		return "/member/joinus.jsp";
 	}
 	
 	
 	@RequestMapping("joinuspro.now")
-	
-	public String joinuspro(memberDTO dto){
+	public String joinuspro(memberDTO dto, HttpServletRequest request){
 		
 	sqlMap.insert("sampleSQL.joinmember", dto);
-		
-		return "/member/joinus.jsp";
+	String nickname = request.getParameter("nickname");
+	
+	request.setAttribute("nickname", nickname);
+		return "/member/joinuspro.jsp";
 	}
+	
+	
+	@RequestMapping("login.now")
+	public String login(memberDTO dto, HttpServletRequest request, HttpSession session){
+		
+		int check=(Integer)sqlMap.queryForObject("sampleSQL.userCheck", dto);
+		if(check==1){
+			session = request.getSession();
+			request.setAttribute("check",check);
+			return "/member/login.jsp";
+			
+			
+		}else{
+			request.setAttribute("memberdto", dto);
+			request.setAttribute("check",check);
+		
+		return "/member/login.jsp";
+		}
+	}
+	
+	
+	
+	
 
 }

@@ -22,5 +22,11 @@ public class main {
 		
 		return "/main/firstview.jsp";
 	}
+	
+	@RequestMapping("main.now")
+	public String main(){
+		
+		return "/main/main.jsp";
+	}
 
 }

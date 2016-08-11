@@ -10,4 +10,8 @@
 	</insert>
 	
 	
+    <select id="userCheck" parameterClass="member"  resultClass="int">
+		select count(*) from nowmember where nickname=#nickname# and pw=#pw#
+	</select>
+	
 	</sqlMap>
