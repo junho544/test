@@ -1,16 +1,20 @@
 package com.spring.vertx.controller;
+import java.util.Map;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
-public class MainController {
+
+@Controller
+public class MainController{
 	
-	@RequestMapping("popup.now")
+	@RequestMapping("mainc.now")
 	public String mainc(){
 		return "/chat/rchat.jsp";
 	}
-	
-	@RequestMapping("mainc.now")
-	public String main(){
-		return "/main_layout/mainLayout.jsp";
+	@RequestMapping("mainc2.now")
+	public String mainc2(){
+		return "/chat/rchat2.jsp";
 	}
 }
