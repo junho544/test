@@ -3,7 +3,7 @@
 
 
 <sqlMap>
-	<typeAlias alias="B-comment" type="Gdiet.DTO.Boast_commentDTO" />
+	<typeAlias alias="B-comment" type="Now.DTO.Boast_commentDTO" />
 <!-- comment -->
 <insert id="insertB_comment" parameterClass="B-comment">
 	insert into boast_comment (boast_num,nick,boast_comment,reg_date) values

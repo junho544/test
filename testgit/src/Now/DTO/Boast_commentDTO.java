@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 public class Boast_commentDTO {
 
 	private int boast_num;
-	private String nick;
+	private String nickname;
 	private String boast_comment;
 	private Timestamp reg_date;
 	public int getBoast_num() {
@@ -14,11 +14,11 @@ public class Boast_commentDTO {
 	public void setBoast_num(int boast_num) {
 		this.boast_num = boast_num;
 	}
-	public String getNick() {
-		return nick;
+	public String getNickname() {
+		return nickname;
 	}
-	public void setNick(String nick) {
-		this.nick = nick;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 	public String getBoast_comment() {
 		return boast_comment;
