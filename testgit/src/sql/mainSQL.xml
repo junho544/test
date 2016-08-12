@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<sqlMap>
+	<typeAlias alias="B-comment" type="Gdiet.DTO.Boast_commentDTO" />
+<!-- comment -->
+<insert id="insertB_comment" parameterClass="B-comment">
+	insert into boast_comment (boast_num,nick,boast_comment,reg_date) values
+	(#boast_num#,
+	 #nick#,
+	 #boast_comment#,
+	 sysdate
+	)
+</insert>
+<select id="getB_comment" parameterClass="java.util.HashMap" resultClass="B-comment">
+	select *from (select boast_num,nick,boast_comment,reg_date,rownum r from boast_comment where boast_num=#boast_num#) 
+		where r <![CDATA[>= #startRow# and r <= #endRow#]]> order by reg_date desc
+</select>
+
+<select id="B_commentcount" parameterClass="int" resultClass="int">
+	select count(*) from boast_comment where boast_num=#boast_num#
+</select>
+<delete id="deleteB_comment" parameterClass="B-comment">
+	delete boast_comment where nickname=#nickname# and reg_date=#reg_date#
+</delete>
+<delete id="alldeleteB_comment" parameterClass="B-board">
+	delete boast_comment where boast_num=#boast_num#
+</delete>
+
+</sqlMap>
