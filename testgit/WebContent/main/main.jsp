@@ -66,7 +66,9 @@ $(document).ready(function() {
     <link href="/testgit/css/business-casual.css" rel="stylesheet">
 
   
-    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 </head>
@@ -87,16 +89,32 @@ $(document).ready(function() {
                 <div class="col-lg-12">
                 <table>
                 <tr>
-                <td rowspan="2" width="200">
+                <td rowspan="5" width="200">
                 <img src="/testgit/image/profile.jpg"/>
                 </td>
                 <td width="300">
-                <p>${member.nickname}</p>
-                ${member.email}
+                
+                <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle btn-sm" type="button" data-toggle="dropdown">
+    <span class="glyphicon glyphicon-cog"></span>
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    
+    <li><a href="">우리톡</a></li>  
+    <li><a href="">랜덤채팅</a></li>
+    <li><a href="">프로필수정</a></li>
+    <li><a href="logout.now">로그아웃</a></li>
+  </ul>
+  </div>
+  
+  
+
                 
                 </td>
                 
-                <td rowspan="2">
+                
+                
+                <td rowspan="5">
                   <div class="form-group">
     <label for="exampleTextarea">${member.nickname}님의 상태메세지</label>
     <textarea class="form-control" rows="5" id="comment" name="comment"
@@ -106,13 +124,43 @@ $(document).ready(function() {
                 </td>
                 
                 </tr>
+<tr>
+<td>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+&nbsp;
+</td>
+</tr>
                 <tr>
                 <td>
-                <a href="">프로필 수정하기</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+                <p>${member.nickname}</p>
+                ${member.email}
                 </td>
                 </tr>
                 </table>
-
 
 
 
@@ -159,8 +207,6 @@ $(document).ready(function() {
                 
                 
 
-                
-    <script src="testgit/js/jquery.js"></script>
-    <script src="testgit/js/bootstrap.min.js"></script>
+
 </body>
 </html>

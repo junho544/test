@@ -10,6 +10,6 @@
 	<sqlMap resource="/sql/git.xml"/>
 	<sqlMap resource="/sql/git_Park.xml"/>
 	<sqlMap resource="/sql/memberSQL.xml"/>
-	<sqlMap resource="/sql/mainSQL.xml"/>
+	
 	
 </sqlMapConfig>

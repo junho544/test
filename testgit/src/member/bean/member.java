@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import Now.DTO.memberDTO;
 
 
@@ -52,6 +51,15 @@ public class member {
 		
 		return "/member/login.jsp";
 		}
+	}
+	
+	
+	@RequestMapping("logout.now")
+	public String logout(memberDTO dto, HttpSession session, HttpServletRequest request)throws Exception{
+		session = request.getSession();
+		session.invalidate();
+		return "redirect:firstview.now";
+		
 	}
 	
 	
