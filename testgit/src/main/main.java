@@ -53,7 +53,7 @@ public class main {
 	
 	
 	
-	@RequestMapping(value="boast_comment.gd")
+	@RequestMapping("boast_comment.now")
 	public String commentBoard( HttpServletRequest request,HttpSession session,@RequestBody String data) throws Exception {
 		
 		
@@ -63,12 +63,11 @@ public class main {
 		JSONObject json=new JSONObject();
 		json = (JSONObject) JSONValue.parse(data);
 		String comment=(String)json.get("comment");
-		int boast_num=Integer.parseInt(json.get("boast_num").toString());
+		
 		if(comment != null){
 			Boast_commentDTO commentDTO=new Boast_commentDTO();
 			commentDTO.setBoast_comment(comment);
 			commentDTO.setBoast_comment(commentDTO.getBoast_comment().replace("\r\n", "<br>"));		
-			commentDTO.setBoast_num(boast_num);
 			commentDTO.setNickname(nickname);
 			sqlMap.insert("insertB_comment",commentDTO);
 			}	
@@ -85,11 +84,11 @@ public class main {
 			int count = 0;
 			int number = 0;
 			List articleList=null;
-			count = (Integer) sqlMap.queryForObject("B_commentcount",boast_num);
+			count = (Integer) sqlMap.queryForObject("B_commentcount");
 			HashMap<String, Integer> map = new HashMap<String, Integer>();
 			map.put("startRow", startRow);
 			map.put("endRow", endRow);
-			map.put("boast_num", boast_num);
+			
 			if (count > 0) { // �˻��� ������ �˻�
 				articleList =sqlMap.queryForList("getB_comment",map);
 			}
@@ -101,7 +100,6 @@ public class main {
 			request.setAttribute("count", new Integer(count));
 			request.setAttribute("number", new Integer(number));
 			request.setAttribute("pageSize", new Integer(pageSize));
-			request.setAttribute("num",boast_num);
 			request.setAttribute("list",articleList);
 			
 		return "/main/boast_comment.jsp";

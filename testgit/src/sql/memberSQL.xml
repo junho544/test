@@ -19,5 +19,7 @@
 		select * from nowmember where nickname=#nickname#
 	</select>
 	
+
+	
 	
 	</sqlMap>

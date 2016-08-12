@@ -1,16 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<script src=http://code.jquery.com/jquery-1.11.3.min.js></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
 
 <script>
 $(document).ready(function() {
 	var obj=new Object();
-	obj.boast_num=${article.boast_num};
-	obj.pageNum=${pageNum};
+
+	
+	
 	$.ajax({
 		type : "post",
-		url : "boast_comment.gd",
+		url : "boast_comment.now",
 		data : JSON.stringify(obj),
 		success :test,
 	});
@@ -19,13 +25,14 @@ $(document).ready(function() {
 		$("#form").html(aaa);
 	}
 	$("#getcomment").bind("click",function(){	// 코멘트 입력시
+		alert("업데이트");
 		obj=new Object();
 		obj.comment=document.getElementById("comment").value;
-		obj.boast_num=${article.boast_num};
-		obj.pageNum=${pageNum};
+		alert(obj.comment);
+		
 		$.ajax({
 			type : "post",
-			url : "boast_comment.gd",
+			url : "boast_comment.now",
 			data : JSON.stringify(obj),
 			success :test2,
 			error : when
@@ -41,13 +48,13 @@ $(document).ready(function() {
 	
 	$('#change').bind('click', function(){
 		var f = document.test;
-		f.action="boast_change.gd",
+		f.action="boast_change.now",
 		f.method="post",
 		f.submit();
 	});
 	$('#delete').bind('click', function(){
 		var f = document.test;
-		f.action="boast_delete.gd",
+		f.action="boast_delete.now",
 		f.method="post",
 		f.submit();
 	});
@@ -55,6 +62,7 @@ $(document).ready(function() {
 		$('#comment').val(''); 
 	});
 });
+
 </script>
 
 
@@ -121,7 +129,7 @@ $(document).ready(function() {
     cols="60" style="resize: none;" placeholder="지금 무슨 생각을 하고 계신가요?"></textarea>
   </div>
   <button style="margin-top:30px;" id="getcomment" type="botton" class="btn btn-primary btn-lg btn-block">업데이트</button>
-                </td>
+              </td>
                 
                 </tr>
 <tr>

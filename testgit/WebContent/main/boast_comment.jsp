@@ -7,12 +7,12 @@
 
 <c:forEach var="list" items="${list}">
 <tr>
-<td>${list.nick}</td><td>${list.reg_date}</td><td></td>
+<td>${list.nickname}</td><td>${list.reg_date}</td><td></td>
 </tr>
 <tr>
 <td colspan="2">${list.boast_comment}</td>
 	<td><c:if test="${mem.nickname==list.nickname}">
-		<a href="window.location='deletecomment.gd?nickname=${mem.nickname}'"></a>
+		<a href="window.location='deletecomment.now?nickname=${mem.nickname}'"></a>
 	</c:if></td>
 </tr>
 </c:forEach>
@@ -33,15 +33,15 @@
 				<ul class="pagination">
 
 					<c:if test="${startPage>10 }">
-						<a href="boast_content.gd?pageNum=${startPage - 10}&num=${num}">[이전]</a>
+						<a href="boast_content.now?pageNum=${startPage - 10}&num=${num}">[이전]</a>
 					</c:if>
 
 					<c:forEach var="i" begin="${startPage}" end="${endPage}">
-						<a href="boast_content.gd?pageNum=${i}&num=${num}">${i}</a>
+						<a href="boast_content.now?pageNum=${i}&num=${num}">${i}</a>
 					</c:forEach>
 
 					<c:if test="${endPage<pageCount }">
-						<a href="boast_content.gd?pageNum=${startPage + 10 }&num=${num}">[다음]</a>
+						<a href="boast_content.now?pageNum=${startPage + 10 }&num=${num}">[다음]</a>
 					</c:if>
 
 					<c:if test="${sessionScope.memNickname != null}">
