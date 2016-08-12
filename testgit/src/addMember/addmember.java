@@ -4,13 +4,13 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.jasper.tagplugins.jstl.core.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import Now.DTO.memberDTO;
+import Now.chat.nowDTO;
 
 @Controller
 public class addmember {
@@ -25,4 +25,14 @@ public class addmember {
 		request.setAttribute("userlist", user);
 		return "/addMember/test.jsp";
 	}
+	@RequestMapping("addmember_ajax.now")
+	public String mainAjax(nowDTO dto , HttpServletRequest request){
+		String nickname=request.getParameter("nickname");
+		
+		nowDTO userinfor = (nowDTO)sqlMap.queryForObject("sampleSQL.userinfor", dto);
+
+		request.setAttribute("userinfor", userinfor);
+		return "/addMember/testAjax.jsp";
+	}
+	
 }

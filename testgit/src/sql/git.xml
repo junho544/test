@@ -6,5 +6,9 @@
   <select id="userlist" parameterClass="Now.DTO.memberDTO"  resultClass="Now.DTO.memberDTO">
 		select * from nowmember
 	</select>
+	
+	 <select id="userinfor" parameterClass="Now.chat.nowDTO"  resultClass="Now.chat.nowDTO">
+		select * from nowmember where nickname=#nickname#
+	</select>
 </sqlMap>
 
