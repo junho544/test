@@ -3,6 +3,7 @@ package addMember;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
@@ -20,7 +21,11 @@ public class addmember {
 	private SqlMapClientTemplate sqlMap;
 	
 	@RequestMapping("addmember.now")
-	public String main(memberDTO dto , HttpServletRequest request){
+	public String main(memberDTO dto , HttpServletRequest request,HttpSession session){
+		String nickname = "park";
+		String email = "park@naver.com";
+		session.setAttribute("nickname", nickname);
+		session.setAttribute("email", email);
 		List <memberDTO> user = (List)sqlMap.queryForList("sampleSQL.userlist");
 		request.setAttribute("userlist", user);
 		return "/addMember/test.jsp";
@@ -30,8 +35,24 @@ public class addmember {
 		String nickname=request.getParameter("nickname");
 		
 		nowDTO userinfor = (nowDTO)sqlMap.queryForObject("sampleSQL.userinfor", dto);
-
+		
 		request.setAttribute("userinfor", userinfor);
+		return "/addMember/testAjax.jsp";
+	}
+	
+	@RequestMapping("addmember_ajax_wait.now")
+	public String mainAjax_addwait(nowDTO dto , HttpServletRequest request){
+		String nickname=request.getParameter("nickname");
+		String email=request.getParameter("email");
+		String friend_nickname =request.getParameter("friend_nickname");
+		String friend_email =request.getParameter("friend_email");
+		System.out.println(friend_nickname);
+		System.out.println(friend_email);
+		System.out.println(email);
+		
+		sqlMap.insert("sampleSQL.addwait",dto);
+		
+		
 		return "/addMember/testAjax.jsp";
 	}
 	

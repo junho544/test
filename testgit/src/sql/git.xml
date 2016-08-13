@@ -10,5 +10,16 @@
 	 <select id="userinfor" parameterClass="Now.chat.nowDTO"  resultClass="Now.chat.nowDTO">
 		select * from nowmember where nickname=#nickname#
 	</select>
+	
+	
+	<insert id="addwait" parameterClass="Now.chat.nowDTO">
+	insert into addmember_wait(nickname,email,friend_nickname,friend_email)
+						values(#nickname#,#email#,#friend_nickname#,#friend_email#)
+	
+	</insert>
+	
+	
+	
+	
 </sqlMap>
 

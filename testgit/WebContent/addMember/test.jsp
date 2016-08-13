@@ -2,6 +2,10 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<link rel="stylesheet" href="./css/comunity/comunityPage.css" type="text/css" charset="utf-8">
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
 <style>
 #divLangSelect {
@@ -15,21 +19,22 @@
 }
 </style>
 
-  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
+
+
+
+
+
   
-<link rel="stylesheet" href="./css/comunity/comunityPage.css" type="text/css" charset="utf-8">
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-
-
-
-
-
-	<c:forEach var="userlist" items="${userlist}">
+<font color=red>${sessionScope.nickname}</font>
+<c:forEach var="userlist" items="${userlist}">
    <div class='imgSelect' onclick="member('${userlist.nickname}')">${userlist.nickname}</div><br />
-    </c:forEach>
+</c:forEach>
 
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+ 
+
+
 
 
 
@@ -46,8 +51,6 @@ $('.imgSelect').click(function(e) {
  }).show();
 });
 
-
-
 </script>
 
 
@@ -58,7 +61,7 @@ $('.imgSelect').click(function(e) {
 	 this.popid=id;
 	    $.ajax({
 	        type: "post",
-	        url : "popup.hou?id="+popid,
+	        url : "addmember_ajax.now?nickname="+popid,
 	        success: popup,	// 페이지요청 성공시 실행 함수
 	        error: whenError	//페이지요청 실패시 실행함수
 		});
@@ -71,19 +74,13 @@ $('.imgSelect').click(function(e) {
 	}
 </script>
 
- 
 
-
-
-
-
-
-
+	
 
 
 <!-- --------즐겨찾기회원보기---------- -->
 <div id="divLangSelect">
-
+<div id="return">요기~</div>
 <div style="position:absolute;top:5px;right:5px">
 <span onClick="javascript:document.getElementById('divLangSelect').style.display='none'" style="cursor:pointer;font-size:1.5em" title="닫기">X</span>
 </div>
@@ -92,7 +89,12 @@ $('.imgSelect').click(function(e) {
  
  
  
- 
+ <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+ <script>
+	$(function() {	//팝업드래그
+		$("#divLangSelect").draggable();	});
+ </script>
  
  
  

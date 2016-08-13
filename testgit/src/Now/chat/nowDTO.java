@@ -6,9 +6,15 @@ public class nowDTO {
 	private String email;
 	private String friend_nickname;
 	private String friend_email;
+	private String checkinvite;
 	
 	
-	
+	public String getCheckinvite() {
+		return checkinvite;
+	}
+	public void setCheckinvite(String checkinvite) {
+		this.checkinvite = checkinvite;
+	}
 	public String getFriend_nickname() {
 		return friend_nickname;
 	}
