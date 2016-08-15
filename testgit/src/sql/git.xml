@@ -16,15 +16,23 @@
 		select count(*) from addmember_wait where id=#id# and friend_id=#friend_id#
 	</select>
 	
+	<select id="add_searchinvite" parameterClass="Now.chat.nowDTO"  resultClass="int">
+		select count(*) from addmember_wait where id=#id# and friend_id=#friend_id#
+	</select>
+	
 	<select id="inviteNumber" parameterClass="Now.chat.nowDTO"  resultClass="int">
 		select count(*) from addmember_wait where friend_id=#friend_id#
+	</select>
+	
+	<select id="friendcheck" parameterClass="Now.chat.nowDTO"  resultClass="int">
+		select count(*) from addmember where id=#id# and friend_id=#friend_id#
 	</select>
 	
 	<select id="inviteList" parameterClass="Now.chat.nowDTO"  resultClass="Now.chat.nowDTO">
 		select * from addmember_wait where friend_id=#friend_id#
 	</select>
 	
-		<select id="friendList" parameterClass="Now.chat.nowDTO"  resultClass="Now.chat.nowDTO">
+	<select id="friendList" parameterClass="Now.chat.nowDTO"  resultClass="Now.chat.nowDTO">
 		select * from addmember where id=#id#
 	</select>
 	

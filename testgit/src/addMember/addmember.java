@@ -38,6 +38,8 @@ public class addmember {
 		return "/addMember/testAjax.jsp";
 	}
 	
+
+	
 	@RequestMapping("addmember_ajax_wait.now")
 	public String mainAjax_addwait(nowDTO dto , HttpServletRequest request){
 		nowDTO add = new nowDTO();
@@ -60,15 +62,28 @@ public class addmember {
 		add.setFriend_nickname(friend_nickname);
 		add.setFriend_image(unknown);
 		add.setFriend_email(friend_email);
+	
+		nowDTO check = new nowDTO();
+		check.setId(friend_id);
+		check.setFriend_id(id);
 		
+	
+		/*add_search=중복친추막기*/
 		int add_search = (Integer)sqlMap.queryForObject("sampleSQL.addwait_search", dto);
 		request.setAttribute("add_search", new Integer(add_search));
+		
+		/*add_search_invite=동시에 친구추가 보내기 방지 ex)해당회원에게 요청이 왔습니다 */
+		int add_search_invite = (Integer)sqlMap.queryForObject("sampleSQL.add_searchinvite", check);
+		request.setAttribute("add_search_invite", new Integer(add_search_invite));
+		
 		/*addmember_wait 테이블에서 중복추가 방지*/
-		if(add_search!=0){
-
-		}else{
-			sqlMap.insert("sampleSQL.addwait",add);
+		if(add_search!=0){		
 			
+			
+		}else{
+			if(add_search_invite==0){
+			sqlMap.insert("sampleSQL.addwait",add);
+			}
 		}
 
 		return "/addMember/addcheck.jsp";
@@ -87,6 +102,9 @@ public class addmember {
 		nowDTO search = (nowDTO)sqlMap.queryForObject("sampleSQL.userinfor",dto);
 		nowDTO searchF = (nowDTO)sqlMap.queryForObject("sampleSQL.userinfor",add);
 		
+		int friendcheck =(Integer)sqlMap.queryForObject("sampleSQL.friendcheck",dto);
+		
+		
 		dto.setNickname(search.getNickname());
 		dto.setEmail(search.getEmail());
 		dto.setImage(search.getImage());
@@ -104,13 +122,15 @@ public class addmember {
 		add.setFriend_email(search.getEmail());
 		add.setFriend_image(search.getImage());
 	
+		
+		if(friendcheck==0){
 		nowDTO accptId=(nowDTO)sqlMap.insert("sampleSQL.addMe",dto);
 		nowDTO accptFId=(nowDTO)sqlMap.insert("sampleSQL.addFriend",add);
 			 sqlMap.delete("sampleSQL.deleteMe",dto);  
 			 sqlMap.delete("sampleSQL.deleteFriend",add); 
-	
-			 
-		return "/addMember/addinvite.jsp";
+		}
+		request.setAttribute("friendcheck", new Integer(friendcheck));	 
+		return "/addMember/acceptCheck.jsp";
 	}
 	@RequestMapping("friendlist.now")
 	public String friendlist(HttpServletRequest request,HttpSession session, Object nowDTO){

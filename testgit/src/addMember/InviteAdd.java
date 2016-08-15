@@ -10,6 +10,7 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import Now.DTO.memberDTO;
 import Now.chat.nowDTO;
 
 @Controller
@@ -31,5 +32,16 @@ public class InviteAdd {
 		return "/addMember/addinvite.jsp";
 	}
 	
-
+	@RequestMapping("inviteAlarm.now")
+	public String inviteAlarm(nowDTO dto , HttpServletRequest request,HttpSession session){
+		String id=(String)session.getAttribute("memId");
+		dto.setFriend_id(id);
+		
+		int inviteNumber = (Integer)sqlMap.queryForObject("sampleSQL.inviteNumber",dto);
+		request.setAttribute("inviteNumber", new Integer(inviteNumber));
+		
+		return "/addMember/returnAjax_RealAlerm.jsp";
+	}
+	
+	
 }
