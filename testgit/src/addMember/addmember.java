@@ -22,17 +22,15 @@ public class addmember {
 	
 	@RequestMapping("addmember.now")
 	public String main(memberDTO dto , HttpServletRequest request,HttpSession session){
-		String nickname = "park";
-		String email = "park@naver.com";
-		session.setAttribute("nickname", nickname);
-		session.setAttribute("email", email);
+		String id=(String)session.getAttribute("memId");
+		dto.setId(id);
 		List <memberDTO> user = (List)sqlMap.queryForList("sampleSQL.userlist");
 		request.setAttribute("userlist", user);
 		return "/addMember/test.jsp";
 	}
 	@RequestMapping("addmember_ajax.now")
 	public String mainAjax(nowDTO dto , HttpServletRequest request){
-		String nickname=request.getParameter("nickname");
+		String id=request.getParameter("id");
 		
 		nowDTO userinfor = (nowDTO)sqlMap.queryForObject("sampleSQL.userinfor", dto);
 		
@@ -42,6 +40,7 @@ public class addmember {
 	
 	@RequestMapping("addmember_ajax_wait.now")
 	public String mainAjax_addwait(nowDTO dto , HttpServletRequest request){
+		String id=request.getParameter("id");
 		String nickname=request.getParameter("nickname");
 		String email=request.getParameter("email");
 		String friend_nickname =request.getParameter("friend_nickname");

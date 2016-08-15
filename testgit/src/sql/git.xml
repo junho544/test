@@ -8,13 +8,13 @@
 	</select>
 	
 	 <select id="userinfor" parameterClass="Now.chat.nowDTO"  resultClass="Now.chat.nowDTO">
-		select * from nowmember where nickname=#nickname#
+		select * from nowmember where id=#id#
 	</select>
 	
 	
 	<insert id="addwait" parameterClass="Now.chat.nowDTO">
-	insert into addmember_wait(nickname,email,friend_nickname,friend_email)
-						values(#nickname#,#email#,#friend_nickname#,#friend_email#)
+	insert into addmember_wait(id,nickname,email,friend_nickname,friend_email)
+						values(#id#,#nickname#,#email#,#friend_id#,#friend_nickname#,#friend_email#)
 	
 	</insert>
 	

@@ -29,7 +29,7 @@
   
 <font color=red>${sessionScope.nickname}</font>
 <c:forEach var="userlist" items="${userlist}">
-   <div class='imgSelect' onclick="member('${userlist.nickname}')">${userlist.nickname}</div><br />
+   <div class='imgSelect' onclick="member('${userlist.id}')">${userlist.nickname}</div><br />
 </c:forEach>
 
  
@@ -57,11 +57,10 @@ $('.imgSelect').click(function(e) {
 
  <script>
  function member(id){
-	alert(id);
 	 this.popid=id;
 	    $.ajax({
 	        type: "post",
-	        url : "addmember_ajax.now?nickname="+popid,
+	        url : "addmember_ajax.now?id="+popid,
 	        success: popup,	// 페이지요청 성공시 실행 함수
 	        error: whenError	//페이지요청 실패시 실행함수
 		});

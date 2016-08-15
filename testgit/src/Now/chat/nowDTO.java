@@ -7,7 +7,20 @@ public class nowDTO {
 	private String friend_nickname;
 	private String friend_email;
 	private String checkinvite;
-	
+	private String id;
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getFriend_id() {
+		return friend_id;
+	}
+	public void setFriend_id(String friend_id) {
+		this.friend_id = friend_id;
+	}
+	private String friend_id;
 	
 	public String getCheckinvite() {
 		return checkinvite;
