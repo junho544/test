@@ -6,6 +6,7 @@ public class memberDTO {
 private String id;
 private String nickname;
 private String pw;
+private String pwcheck;
 private String email;
 private String reason;
 
@@ -27,6 +28,12 @@ public String getPw() {
 }
 public void setPw(String pw) {
 	this.pw = pw;
+}
+public String getPwcheck() {
+	return pwcheck;
+}
+public void setPwcheck(String pwcheck) {
+	this.pwcheck = pwcheck;
 }
 public String getEmail() {
 	return email;

@@ -104,7 +104,7 @@ public class member {
 		
 		String id=(String)session.getAttribute("memId");
 		
-		String pw=request.getParameter("pw");
+		String pw=request.getParameter("pwcheck");
 		String reason=request.getParameter("reason");
 		
 		dto.setId(id);

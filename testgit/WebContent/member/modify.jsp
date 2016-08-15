@@ -38,29 +38,25 @@
    }
     
     
-    
+   
     
     function checkIt2() {
-        var input2 = eval("document.input2");
-        
-        var reason=($('input2:radio[name=reason]:checked').val());
-        
-        if(!reason.value) {
-            alert("회원탈퇴 이유를 선택해주세요.");
-            return false;
-        }
-        
-        if(!input2.pw.value ) {
-            alert("비밀번호를 입력하세요");
-            return false;
-        }
+    	
+    	
+    	
+    	var a= eval(document.input2)
+    	
 
-        
-        
+    	
+    	if(!a.pwcheck.value){
+    		alert("비밀번호를 입력해주세요.")
+    		return false;
+    	}
+    	
+    	
+    }
 
-
-   }
-    </script>
+  </script> 
     
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
@@ -290,7 +286,7 @@
                     <tr>
                     <td></td><td>
                     
-                    <input type="radio" name="reason" value="기타">기타
+                    <input type="radio" name="reason" value="기타" checked="checked">기타
                     </td>
                     </tr>
                     
@@ -313,7 +309,9 @@
 
 <td>
 <div class="input-group input-group-lg">
-  <input type="password" name="pw" size="40" class="form-control" placeholder="Password Check" aria-describedby="sizing-addon1">
+
+  <input type="password" name="pwcheck" size="40" class="form-control" placeholder="Password Check" aria-describedby="sizing-addon1">
+   
 </div>
 </td>
 </tr>
