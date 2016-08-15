@@ -15,7 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 import Now.DTO.Boast_commentDTO;
 import Now.DTO.memberDTO;
 
@@ -37,15 +36,15 @@ public class main {
 	public String main(memberDTO dto, HttpServletRequest request, HttpSession session){
 		
 		session = request.getSession();
-		session.setAttribute("id", dto.getId());
+		session.setAttribute("memId", dto.getId());
 		
-		String id=(String)session.getAttribute("memId");
+		String id=(String)dto.getId();
+		System.out.println(id);
+		dto=(memberDTO)sqlMap.queryForObject("sampleSQL.getMember", id);
 		
-		dto.setId(id);
-	
-		memberDTO list =(memberDTO)sqlMap.queryForObject("sampleSQL.getMember", dto);
 
-		request.setAttribute("member", list);
+
+		request.setAttribute("member", dto);
 		
 		
 		return "/main/main.jsp";

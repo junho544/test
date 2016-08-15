@@ -75,6 +75,12 @@
 </tr>
 
 <tr>
+<td>
+&nbsp;
+</td>
+</tr>
+
+<tr>
 <td width="70">
 닉네임
 </td>

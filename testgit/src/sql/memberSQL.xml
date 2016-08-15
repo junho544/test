@@ -15,7 +15,7 @@
 	</select>
 	
 	
-    <select id="getMember" parameterClass="member" resultClass="member">
+    <select id="getMember" parameterClass="string" resultClass="member">
 		select * from nowmember where id=#id#
 	</select>
 	
