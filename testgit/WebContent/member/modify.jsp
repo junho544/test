@@ -43,7 +43,7 @@
     function checkIt2() {
         var input2 = eval("document.input2");
         
-        var reason=$(':radio[name="reason"]:checked').val();
+        var reason=($('input2:radio[name=reason]:checked').val());
         
         if(!reason.value) {
             alert("회원탈퇴 이유를 선택해주세요.");
@@ -56,7 +56,7 @@
         }
 
         
-        alert("회원탈퇴가 완료되었습니다.")
+        
 
 
    }
