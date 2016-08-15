@@ -42,11 +42,12 @@ function retext(thefield){
    
     	<span id="member">
     	<table>
-    	<c:forEach var="friend" items="${friendList}"> 
     	검색창에 이름을 치면 return 페이지로 친구들 보여주기
+    	<c:forEach var="friend" items="${friendList}"> 
+    	
     	<tr><td><div id="memList"><font color=green>●</font>
     	<span id="imgg"><img src="/testgit/image/profile.jpg"/></span> 
-    	<il id="profileUser"><b>${friend.nickname}</b> / <font size="1">상태메세지 또는 대화명</font></il></div></td></tr>
+    	<il id="profileUser"><b>${friend.friend_nickname}</b> / <font size="1">상태메세지 또는 대화명</font></il></div></td></tr>
     	
     	</c:forEach>
     	</table>
@@ -55,6 +56,9 @@ function retext(thefield){
 	</div>
 </div>  
 
+<c:forEach var="userlist" items="${userlist}">
+   <div class='imgSelect' onclick="member('${userlist.id}')">${userlist.nickname}</div><br />
+</c:forEach>
 
 
 
