@@ -5,20 +5,25 @@
 	 <typeAlias alias="member" type="Now.DTO.memberDTO"/> 
 	
 	<insert id="joinmember" parameterClass="member">
-		insert into nowmember (NICKNAME,PW,EMAIL)
-		values(#nickname#,#pw#,#email#)
+		insert into nowmember (ID,NICKNAME,PW,EMAIL)
+		values(#id#,#nickname#,#pw#,#email#)
 	</insert>
 	
 	
     <select id="userCheck" parameterClass="member"  resultClass="int">
-		select count(*) from nowmember where nickname=#nickname# and pw=#pw#
+		select count(*) from nowmember where id=#id# and pw=#pw#
 	</select>
 	
 	
     <select id="getMember" parameterClass="member" resultClass="member">
-		select * from nowmember where nickname=#nickname#
+		select * from nowmember where id=#id#
 	</select>
 	
+	
+<!-- <update id="mypageupdate" parameterClass="member"> -->
+<!--         update member set NICKNAME=#nickname#,PW=#pw#,EMAIL=#email#,PHONE=#phone# -->
+<!--         where ID=#id# -->
+<!-- </update> -->
 
 	
 	

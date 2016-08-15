@@ -13,11 +13,6 @@
     function checkIt() {
         var input = eval("document.input");
         
-        if(!input.id.value) {
-            alert("닉네임을 입력하세요");
-            return false;
-        }
-        
         if(!input.nickname.value) {
             alert("닉네임을 입력하세요");
             return false;
@@ -54,7 +49,7 @@
 
 
 <center>
-<img style="margin-top:100px;" src="/testgit/image/join.png"/>
+<img style="margin-top:100px;" src="/testgit/image/modi.png"/>
 </center>
         <div class="row">
             <div class="box">
@@ -64,24 +59,12 @@
 <table>
 <tr>
 <td width="70">
-아이디
-</td>
-
-<td>
-<div class="input-group input-group-lg"> 
-  <input type="text" name="id" size="40" class="form-control" placeholder="identity" aria-describedby="sizing-addon1">
-</div>
-</td>
-</tr>
-
-<tr>
-<td width="70">
 닉네임
 </td>
 
 <td>
 <div class="input-group input-group-lg"> 
-  <input type="text" name="nickname" size="40" class="form-control" placeholder="Nickname" aria-describedby="sizing-addon1">
+  <input type="text" name="nickname" value="${member.nickname}" size="40" class="form-control" placeholder="Nickname" aria-describedby="sizing-addon1">
 </div>
 </td>
 </tr>
@@ -135,7 +118,7 @@
 
 <td>
 <div class="input-group input-group-lg">
-  <input type="text" name="email" size="40" class="form-control" placeholder="Email" aria-describedby="sizing-addon1">
+  <input type="text" name="email" size="40" value="${member.email}" class="form-control" placeholder="Email" aria-describedby="sizing-addon1">
 </div>
 </td>
 </tr>
@@ -152,7 +135,7 @@
 </center>
 
                 
-                <button style="margin-top:30px;" type="submit" class="btn btn-primary btn-lg btn-block">가입완료</button>
+                <button style="margin-top:30px;" type="submit" class="btn btn-primary btn-lg btn-block">수정완료</button>
                 
                 
                 </div>

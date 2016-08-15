@@ -110,7 +110,7 @@ $(document).ready(function() {
     
     <li><a href="">우리톡</a></li>  
     <li><a href="">랜덤채팅</a></li>
-    <li><a href="">프로필수정</a></li>
+    <li><a href="modify.now">프로필수정</a></li>
     <li><a href="logout.now">로그아웃</a></li>
   </ul>
   </div>

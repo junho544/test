@@ -27,9 +27,9 @@ public class member {
 	public String joinuspro(memberDTO dto, HttpServletRequest request){
 		
 	sqlMap.insert("sampleSQL.joinmember", dto);
-	String nickname = request.getParameter("nickname");
+	String id = request.getParameter("id");
 	
-	request.setAttribute("nickname", nickname);
+	request.setAttribute("id", id);
 		return "/member/joinuspro.jsp";
 	}
 	
@@ -40,7 +40,7 @@ public class member {
 		int check=(Integer)sqlMap.queryForObject("sampleSQL.userCheck", dto);
 		if(check==1){
 			session = request.getSession();
-			session.setAttribute("memNickname", dto.getNickname());
+			session.setAttribute("memID", dto.getId());
 			request.setAttribute("check",check);
 			return "/member/login.jsp";
 			
@@ -62,7 +62,23 @@ public class member {
 		
 	}
 	
+	@RequestMapping("modify.now")
+	public String modify(memberDTO dto, HttpSession session, HttpServletRequest request)throws Exception{
+		
+		session.setAttribute("nickname", dto.getNickname());
+		
+		String nickname=(String)session.getAttribute("memNickname");
+		System.out.println(nickname);
+		dto.setNickname(nickname);
 	
+		memberDTO list =(memberDTO)sqlMap.queryForObject("sampleSQL.getMember", dto);
+
+		request.setAttribute("member", list);
+		
+		return "/member/modify.jsp";
+		
+	}
+
 	
 	
 }

@@ -5,6 +5,9 @@
 <head>
     <!-- Bootstrap Core CSS -->
     <link href="/testgit/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>우리 지금 만나</title>
@@ -39,8 +42,8 @@
 
 
 <div class="input-group input-group-lg">
-  <span class="input-group-addon" id="sizing-addon1">Nickname</span>
-  <input size="55" type="text" name="nickname" class="form-control" placeholder="닉네임을 입력해주세요" aria-describedby="sizing-addon1">
+  <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-user"></span>IDentity</span>
+  <input size="55" type="text" name="id" class="form-control" placeholder="아이디를 입력해주세요" aria-describedby="sizing-addon1">
 </div>
 
 </td>
