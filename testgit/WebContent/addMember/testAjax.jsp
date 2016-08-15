@@ -15,8 +15,8 @@ function addmember(id,nick,email,img){
         error: whenError	//페이지요청 실패시 실행함수
 	});
 }
-function popupadd(){
-	alert("추가완료");
+function popupadd(aaa){
+	$("#returnADD").html(aaa);
 }
 function whenError(){
   alert("친구추가ajax에러");
@@ -24,9 +24,9 @@ function whenError(){
 </script>
 
 
-${add_search}<br />
 
 
+<div id="returnADD"><!-- add_search 체크해주는 ajax --></div>
  ${userinfor.id}<br />
  ${userinfor.nickname} <br />	
  ${userinfor.email}

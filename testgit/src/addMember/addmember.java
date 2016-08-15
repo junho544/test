@@ -74,7 +74,7 @@ public class addmember {
 		
 		
 		
-		return "/addMember/testAjax.jsp";
+		return "/addMember/addcheck.jsp";
 	}
 	
 }
