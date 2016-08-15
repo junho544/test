@@ -5,6 +5,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
+    <link href="/testgit/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/testgit/css/business-casual.css" rel="stylesheet">
+
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 
 <link rel="stylesheet" type="text/css" href="/testgit/css/main/main.css">
 <script>
@@ -32,7 +40,8 @@ function retext(thefield){
 		   		
 		   	</tr>
 		   	<tr>
-		   	<td><span id="memSearch"><input type="text" onFocus="clearText(this)" onblur="retext(this)" value="친구검색하기/자동완성"></span></td>
+		   	<td><span id="memSearch"><input type="text" onFocus="clearText(this)" onblur="retext(this)" 
+		   	value="친구검색하기/자동완성"></span></td>
 		   	</tr>
 		   	
     	</table>
@@ -47,7 +56,32 @@ function retext(thefield){
     	
     	<tr><td><div id="memList"><font color=green>●</font>
     	<span id="imgg"><img src="/testgit/image/profile.jpg"/></span> 
-    	<il id="profileUser"><b>${friend.friend_nickname}</b> / <font size="1">상태메세지 또는 대화명</font></il></div></td></tr>
+    	<il id="profileUser">
+    	
+    	 <div class="dropdown">
+    <button class="btn btn-info btn-sm" type="button" data-toggle="dropdown">
+    <b>${friend.friend_nickname}</b>
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    
+    <li><a href="">쪽지보내기</a></li>  
+    <li><a href="">프로필보기</a></li>
+    <li><a href="">대화시작</a></li>
+
+  </ul>
+  </div>
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	 / <font size="1">상태메세지 또는 대화명</font></il></div></td></tr>
     	
     	</c:forEach>
     	</table>

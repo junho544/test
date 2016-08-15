@@ -14,22 +14,22 @@ h1{font-size:10px; }
 
 /***********************************************오픈톡메인*********************************************************/
 	#pop{
-	    width:300px; height:500px; background-color:white; 
-	     
+	    width:400px; height:500px; background-color:white; 
+	     margin-top:10px; margin-left:10px; margin-right:10px; margin-bottom:10px;
 	    VISIBILITY: visible ;
 	    font-family:openfont; font-size:11px;
 	   }
-   	.notice {width:300px; height:20px; color:white; font-weight:bold; background-color:#00A2E8; font-family:openfont; font-size:13px;}
+   	.notice {width:400px; height:20px; color:white; font-weight:bold; background-color:#00A2E8; font-family:openfont; font-size:13px;}
 	.notice #noticeright { width:30px; height:20px; float:right; font-family:openfont; font-size:13px;}
 	
-	.contentsTop{width:300px; height:60px; font-family:openfont; font-size:13px; margin:center; text-align:center; background-color:#EAEAEA;}
-	.contentsTop #toptable{width:300px; height:60px; font-family:openfont; font-size:11px; text-align:center;}
+	.contentsTop{width:400px; height:60px; font-family:openfont; font-size:13px; margin:center; text-align:center; background-color:#EAEAEA;}
+	.contentsTop #toptable{width:400px; height:60px; font-family:openfont; font-size:11px; text-align:center;}
 	#toptable img{border-radius:0%;}
 	
-	.contentsBottom{width:300px; height:30px; font-family:openfont; font-size:11px; background-color:#F6F6F6; }
-	.contentsBottom #bottomtable{width:300px; height:30px; font-family:openfont; font-size:11px; border-bottom: 1px solid #ccc;}
+	.contentsBottom{width:400px; height:30px; font-family:openfont; font-size:11px; background-color:#F6F6F6; }
+	.contentsBottom #bottomtable{width:400px; height:30px; font-family:openfont; font-size:11px; border-bottom: 1px solid #ccc;}
 	
-	.contents { width:300px; height:390px;  font-family:openfont; font-size:10px; background-color:#F6F6F6; }
+	.contents { width:400px; height:390px;  font-family:openfont; font-size:10px; background-color:#F6F6F6; }
 	 
    .pop_bt{
     width:50px; 
@@ -91,7 +91,7 @@ h1{font-size:10px; }
     float:left;
    }
    	#memList{
-    width:250px; 
+    width:400px; 
     cursor: pointer;
     float:left;
    }
