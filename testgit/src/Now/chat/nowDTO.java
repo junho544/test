@@ -8,6 +8,21 @@ public class nowDTO {
 	private String friend_email;
 	private String checkinvite;
 	private String id;
+	private String image;
+	private String friend_image;
+	
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public String getFriend_image() {
+		return friend_image;
+	}
+	public void setFriend_image(String friend_image) {
+		this.friend_image = friend_image;
+	}
 	public String getId() {
 		return id;
 	}

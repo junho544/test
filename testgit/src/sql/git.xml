@@ -7,15 +7,19 @@
 		select * from nowmember
 	</select>
 	
+	
 	 <select id="userinfor" parameterClass="Now.chat.nowDTO"  resultClass="Now.chat.nowDTO">
 		select * from nowmember where id=#id#
 	</select>
 	
+	<select id="addwait_search" parameterClass="Now.chat.nowDTO"  resultClass="int">
+		select count(*) from addmember_wait where id=#id# and friend_id=#friend_id#
+	</select>
 	
 	<insert id="addwait" parameterClass="Now.chat.nowDTO">
-	insert into addmember_wait(id,nickname,email,friend_nickname,friend_email)
-						values(#id#,#nickname#,#email#,#friend_id#,#friend_nickname#,#friend_email#)
-	
+	insert into addmember_wait (id,nickname,email,image,friend_id,friend_nickname,friend_email,friend_image)
+						values(#id#,#nickname#,#email#,#image#,#friend_id#,#friend_nickname#,#friend_email#,#friend_image#)
+				
 	</insert>
 	
 	
