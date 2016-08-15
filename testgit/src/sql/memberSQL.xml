@@ -20,10 +20,10 @@
 	</select>
 	
 	
-<!-- <update id="mypageupdate" parameterClass="member"> -->
-<!--         update member set NICKNAME=#nickname#,PW=#pw#,EMAIL=#email#,PHONE=#phone# -->
-<!--         where ID=#id# -->
-<!-- </update> -->
+<update id="nowUpdate" parameterClass="member">
+        update nowmember set NICKNAME=#nickname#,PW=#pw#,EMAIL=#email#
+        where ID=#id#
+</update>
 
 	
 	

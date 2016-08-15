@@ -30,7 +30,9 @@
         if(!input.email.value) {
             alert("이메일을 입력하세요");
             return false;
-        }  
+        }
+        
+        alert("회원정보가 변경되었습니다.")
 
 
    }
@@ -43,7 +45,7 @@
 
 
 
-<form name="input" action="joinuspro.now" method="post" onSubmit="return checkIt()"/>
+<form name="input" action="modifypro.now" method="post" onSubmit="return checkIt()"/>
 
  <div class="container">
 

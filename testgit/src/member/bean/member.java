@@ -65,18 +65,37 @@ public class member {
 	@RequestMapping("modify.now")
 	public String modify(memberDTO dto, HttpSession session, HttpServletRequest request)throws Exception{
 		
-		session.setAttribute("nickname", dto.getNickname());
 		
-		String nickname=(String)session.getAttribute("memNickname");
-		System.out.println(nickname);
-		dto.setNickname(nickname);
-	
-		memberDTO list =(memberDTO)sqlMap.queryForObject("sampleSQL.getMember", dto);
+		
+		String id=(String)session.getAttribute("memId");
 
-		request.setAttribute("member", list);
+	
+		dto =(memberDTO)sqlMap.queryForObject("sampleSQL.getMember", id);
+
+		request.setAttribute("member", dto);
 		
 		return "/member/modify.jsp";
 		
+	}
+	
+	
+	@RequestMapping("modifypro.now")
+	public String modifypro(memberDTO dto,HttpSession session, HttpServletRequest request)throws Exception{
+		
+		String id=(String)session.getAttribute("memId");
+		
+		String nickname=request.getParameter("nickname");
+		String pw=request.getParameter("pw");
+		String email=request.getParameter("email");
+		
+		dto.setId(id);
+		dto.setNickname(nickname);
+		dto.setPw(pw);
+		dto.setEmail(email);
+		
+		sqlMap.update("sampleSQL.nowUpdate", dto);
+		
+		return "redirect:main.now";
 	}
 
 	
