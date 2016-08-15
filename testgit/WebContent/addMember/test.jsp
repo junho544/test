@@ -104,12 +104,12 @@ $('.imgSelect').click(function(e) {
  
 <br />
 <a href="invite.now">초대연습</a> <br />
-<a class="imgSelect" onclick="open(this.form)">친구리스트</a>
+<a class="imgSelect" onclick="openCreate(this.form)">친구리스트</a>
 
 
 
 <script language="JavaScript">
-    function open() {
+    function openCreate() {
 url = "/testgit/friendlist.now";
         
         
