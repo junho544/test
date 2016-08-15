@@ -86,7 +86,12 @@ h1{font-size:10px; }
 /***************************************오픈톡메인 메뉴 버튼설정*************************************************/	
 	
 	#mem{
-    width:50px; 
+    width:80px; 
+    cursor: pointer;
+    float:left;
+   }
+   	#memList{
+    width:250px; 
     cursor: pointer;
     float:left;
    }
@@ -94,147 +99,14 @@ h1{font-size:10px; }
     width:50px; 
     cursor: pointer;
  	float:left;
+   }
+   #imgg img{
+    position:absolute; top:100px; left:35px;  
+   border-radius: 50%; 
+   width:35px;
+   height:30px;
+   }
    
-/***************************************사원프로필설정팝업*************************************************/   
-
-
-
-
-
-
-/*******************************************메인공지스크롤링부분******************************************************/
-#alarm_cate{
-	overflow:hidden;
-	text-overflow:ellipsis;
-	white-space:nowrap;
-	float:left;
-	width: 19%;
-	font-family:openfont; 
-	font-size:15px;
+#profileUser{
+	position:absolute; top:105px; left:80px;  
 }
-
-#alarm_name{
-	overflow:hidden;
-	text-overflow:ellipsis;
-	white-space:nowrap;
-	float: left;
-	width: 35%;
-	font-family:openfont; 
-	font-size:15px;
-}
-
-#report_alarm{
-	float: left; 
-	width: 41%;
-	overflow:hidden;
-	text-overflow:ellipsis;
-	white-space:nowrap;
-	font-family:openfont; 
-	font-size:15px;
-}
-
-.alarm_atag {
-	text-decoration:none;
-	}
-	
-#alarm_div{
-	float:right;
-	width:92%; 
-	height:30px;
-	border-radius: 15px; 
-	font-family:openfont; 
-	font-size:15px;
-	border: 1px solid #bbc5cd;
-}
-
-
-.alarm_li{
-	width:620px;
-	font-family:openfont;
-}
-
-.alarm_li:hover {background-color: #5CD1E5}
-
-/*******************************************메인공지리스트부분******************************************************/
-div, ul, li { margin:0; padding:0; }
-
-#noticeList {
-	border-radius: 15px 0 0 0;
-	width:4%;
-	float:left;
-	padding:0 0 3px 0;
-	background-color: #FFFFFF;
-}
-
-#noticeList img{ margin-left:15px;
-margin-top:10px;}
-
-
-
-#noticeList ul li {
-	float:left;
-	list-style-type:none;
-	height:20px;
-	z-index:1000;
-}
-
-#noticeList a {
-	color:#f1f1f1;
-	font-family:arial;
-	padding:0 10px 0 10px;
-	text-decoration:none;
-}
-
-#noticeList ul ul {
-	display:none;
-	position:absolute;
-	z-index:1000;
-	background-color: #FFFFFF;
-}
-
-#noticeList ul li:hover ul {
-	display: block;
-}
-
-#noticeList ul ul li {
-	float:none;
-	width:570px;
-	margin-left:48px;
-}
-
-#noticeList ul ul li:hover{
-	background-color: #5CD1E5;
-} 
-
-#drop_cate{
-	overflow:hidden;
-	text-overflow:ellipsis;
-	white-space:nowrap;
-	float:left;
-	width: 19%;
-	font-family:openfont; 
-	font-size:15px;
-}
-
-#drop_name{
-	overflow:hidden;
-	text-overflow:ellipsis;
-	white-space:nowrap;
-	float: left;
-	width: 35%;
-	font-family:openfont; 
-	font-size:15px;
-}
-
-#report_drop{
-	float: left; 
-	width: 41%;
-	overflow:hidden;
-	text-overflow:ellipsis;
-	white-space:nowrap;
-	font-family:openfont; 
-	font-size:15px;
-}
-
-.photo_main {position: relative;}
-.photo_main_up{ position: absolute; left: 14; bottom: 8;font-size: 1.7em;  width: 30px;font-weight: bold;opacity: 0.7; filter: alpha(opacity=60); }

@@ -23,14 +23,35 @@
 	<select id="inviteList" parameterClass="Now.chat.nowDTO"  resultClass="Now.chat.nowDTO">
 		select * from addmember_wait where friend_id=#friend_id#
 	</select>
+	
+		<select id="friendList" parameterClass="Now.chat.nowDTO"  resultClass="Now.chat.nowDTO">
+		select * from addmember where id=#id#
+	</select>
+	
+	
 	<insert id="addwait" parameterClass="Now.chat.nowDTO">
 	insert into addmember_wait (id,nickname,email,image,friend_id,friend_nickname,friend_email,friend_image)
 						values(#id#,#nickname#,#email#,#image#,#friend_id#,#friend_nickname#,#friend_email#,#friend_image#)
 				
 	</insert>
+	<insert id="addFriend" parameterClass="Now.chat.nowDTO">
+	insert into addmember (id,nickname,email,image,friend_id,friend_nickname,friend_email,friend_image)
+						values(#id#,#nickname#,#email#,#image#,#friend_id#,#friend_nickname#,#friend_email#,#friend_image#)
+				
+	</insert>
+	<insert id="addMe" parameterClass="Now.chat.nowDTO">
+	insert into addmember (id,nickname,email,image,friend_id,friend_nickname,friend_email,friend_image)
+						values(#id#,#nickname#,#email#,#image#,#friend_id#,#friend_nickname#,#friend_email#,#friend_image#)
+				
+	</insert>
 	
+	<delete id="deleteMe"  parameterClass="Now.chat.nowDTO">
+	delete addmember_wait where id=#id# and friend_id=#friend_id#
+	</delete>
 	
-	
+		<delete id="deleteFriend"  parameterClass="Now.chat.nowDTO">
+	delete addmember_wait where id=#id# and friend_id=#friend_id#
+	</delete>
 	
 </sqlMap>
 

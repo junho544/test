@@ -16,6 +16,11 @@
  width:250px;
  height:150px;
  padding:10px;
+ cursor: pointer;
+ 
+}
+.imgSelect{
+cursor: pointer;
 }
 </style>
 
@@ -98,5 +103,29 @@ $('.imgSelect').click(function(e) {
  
  
 <br />
-<a href="invite.now">초대연습</a>
+<a href="invite.now">초대연습</a> <br />
+<a class="imgSelect" onclick="openCreate(this.form)">친구리스트</a>
+
+
+
+<script language="JavaScript">
+    function openCreate() {
+url = "/testgit/friendlist.now";
+        
+        
+        window.open(url, "create", 'left='+(screen.availWidth-650)/2+',top='+(screen.availHeight-500)/2+', width=650px,height=500px');
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -74,4 +74,53 @@ public class addmember {
 		return "/addMember/addcheck.jsp";
 	}
 	
+	@RequestMapping("accept.now")
+	public String accept(HttpServletRequest request,HttpSession session, Object nowDTO){
+		nowDTO add = new nowDTO();
+		nowDTO dto = new nowDTO();
+		String id = (String)session.getAttribute("memId");
+		String friend_id=request.getParameter("friend_id");
+		
+		dto.setId(id);
+		add.setId(friend_id);
+		
+		nowDTO search = (nowDTO)sqlMap.queryForObject("sampleSQL.userinfor",dto);
+		nowDTO searchF = (nowDTO)sqlMap.queryForObject("sampleSQL.userinfor",add);
+		
+		dto.setNickname(search.getNickname());
+		dto.setEmail(search.getEmail());
+		dto.setImage(search.getImage());
+		dto.setFriend_id(friend_id);
+		dto.setFriend_nickname(searchF.getNickname());
+		dto.setFriend_email(searchF.getEmail());
+		dto.setFriend_image(searchF.getImage());
+		
+		add.setNickname(searchF.getNickname());
+		add.setEmail(searchF.getEmail());
+		add.setImage(searchF.getImage());
+		
+		add.setFriend_id(id);
+		add.setFriend_nickname(search.getNickname());
+		add.setFriend_email(search.getEmail());
+		add.setFriend_image(search.getImage());
+	
+		nowDTO accptId=(nowDTO)sqlMap.insert("sampleSQL.addMe",dto);
+		nowDTO accptFId=(nowDTO)sqlMap.insert("sampleSQL.addFriend",add);
+			 sqlMap.delete("sampleSQL.deleteMe",dto);  
+			 sqlMap.delete("sampleSQL.deleteFriend",add); 
+	
+			 
+		return "/addMember/addinvite.jsp";
+	}
+	@RequestMapping("friendlist.now")
+	public String friendlist(HttpServletRequest request,HttpSession session, Object nowDTO){
+		nowDTO dto = new nowDTO();
+		String id = (String)session.getAttribute("memId");
+		dto.setId(id);
+
+		List friendList = (List)sqlMap.queryForList("sampleSQL.friendList",dto);
+		
+		request.setAttribute("friendList",friendList);
+		return "/addMember/friendList.jsp";
+	}
 }
