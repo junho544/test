@@ -27,7 +27,7 @@
 
 
   
-<font color=red>${sessionScope.nickname}</font>
+<font color=red>${sessionScope.memId}</font>
 <c:forEach var="userlist" items="${userlist}">
    <div class='imgSelect' onclick="member('${userlist.id}')">${userlist.nickname}</div><br />
 </c:forEach>
@@ -97,5 +97,6 @@ $('.imgSelect').click(function(e) {
  
  
  
-
+<br />
+<a href="invite.now">초대연습</a>
 

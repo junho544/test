@@ -70,10 +70,7 @@ public class addmember {
 			sqlMap.insert("sampleSQL.addwait",add);
 			
 		}
-		
-		
-		
-		
+
 		return "/addMember/addcheck.jsp";
 	}
 	

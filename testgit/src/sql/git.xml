@@ -3,7 +3,7 @@
 
 <sqlMap namespace="sampleSQL">
 
-  <select id="userlist" parameterClass="Now.DTO.memberDTO"  resultClass="Now.DTO.memberDTO">
+    <select id="userlist" parameterClass="Now.DTO.memberDTO"  resultClass="Now.DTO.memberDTO">
 		select * from nowmember
 	</select>
 	
@@ -16,6 +16,13 @@
 		select count(*) from addmember_wait where id=#id# and friend_id=#friend_id#
 	</select>
 	
+	<select id="inviteNumber" parameterClass="Now.chat.nowDTO"  resultClass="int">
+		select count(*) from addmember_wait where friend_id=#friend_id#
+	</select>
+	
+	<select id="inviteList" parameterClass="Now.chat.nowDTO"  resultClass="Now.chat.nowDTO">
+		select * from addmember_wait where friend_id=#friend_id#
+	</select>
 	<insert id="addwait" parameterClass="Now.chat.nowDTO">
 	insert into addmember_wait (id,nickname,email,image,friend_id,friend_nickname,friend_email,friend_image)
 						values(#id#,#nickname#,#email#,#image#,#friend_id#,#friend_nickname#,#friend_email#,#friend_image#)
