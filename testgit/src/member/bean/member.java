@@ -27,9 +27,9 @@ public class member {
 	public String joinuspro(memberDTO dto, HttpServletRequest request){
 		
 	sqlMap.insert("sampleSQL.joinmember", dto);
-	String id = request.getParameter("id");
+	String nickname = request.getParameter("nickname");
 	
-	request.setAttribute("id", id);
+	request.setAttribute("nickname", nickname);
 		return "/member/joinuspro.jsp";
 	}
 	
@@ -96,6 +96,40 @@ public class member {
 		sqlMap.update("sampleSQL.nowUpdate", dto);
 		
 		return "redirect:main.now";
+	}
+	
+	
+	@RequestMapping("delete.now")
+	public String delete(memberDTO dto,HttpSession session, HttpServletRequest request)throws Exception{
+		
+		String id=(String)session.getAttribute("memId");
+		
+		String pw=request.getParameter("pw");
+		String reason=request.getParameter("reason");
+		
+		dto.setId(id);
+		dto.setPw(pw);
+		dto.setReason(reason);
+		
+		int check=(Integer)sqlMap.queryForObject("sampleSQL.userCheck", dto);
+		if(check==1){
+			sqlMap.delete("sampleSQL.nowDelete", dto);
+			sqlMap.insert("sampleSQL.nowReason", dto);
+			session = request.getSession();
+			session.invalidate();	
+			
+			request.setAttribute("check",check);
+			return "/member/delete.jsp";
+		
+		
+		}else{
+			request.setAttribute("check",check);
+		
+		return "/member/delete.jsp";
+		}
+		
+
+		
 	}
 
 	

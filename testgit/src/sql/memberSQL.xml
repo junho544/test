@@ -25,6 +25,16 @@
         where ID=#id#
 </update>
 
+
+<delete id="nowDelete" parameterClass="member">
+       delete from nowmember where ID=#id# and PW=#pw#
+</delete>
+
+
+	<insert id="nowReason" parameterClass="member">
+		insert into nowreason (ID,reason,dayday)
+		values(#id#,#reason#,sysdate)
+	</insert>
 	
 	
 	</sqlMap>

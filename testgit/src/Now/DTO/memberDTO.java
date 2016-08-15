@@ -7,6 +7,7 @@ private String id;
 private String nickname;
 private String pw;
 private String email;
+private String reason;
 
 
 public String getId() {
@@ -32,6 +33,12 @@ public String getEmail() {
 }
 public void setEmail(String email) {
 	this.email = email;
+}
+public String getReason() {
+	return reason;
+}
+public void setReason(String reason) {
+	this.reason = reason;
 }
 
 
