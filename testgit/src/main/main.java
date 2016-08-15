@@ -35,10 +35,8 @@ public class main {
 	@RequestMapping("main.now")
 	public String main(memberDTO dto, HttpServletRequest request, HttpSession session){
 		
-		session = request.getSession();
-		session.setAttribute("memId", dto.getId());
 		
-		String id=(String)dto.getId();
+		String id=(String)session.getAttribute("memId");
 		System.out.println(id);
 		dto=(memberDTO)sqlMap.queryForObject("sampleSQL.getMember", id);
 		

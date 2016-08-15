@@ -40,7 +40,7 @@ public class member {
 		int check=(Integer)sqlMap.queryForObject("sampleSQL.userCheck", dto);
 		if(check==1){
 			session = request.getSession();
-			session.setAttribute("memID", dto.getId());
+			session.setAttribute("memId", dto.getId());
 			request.setAttribute("check",check);
 			return "/member/login.jsp";
 			
