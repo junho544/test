@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
 
 <c:if test ="${check ==1}">
@@ -10,7 +10,7 @@
 
 <c:if test = "${check !=1}">
 <script>
-alert("╟Ха╓а╓╨╦╦╕ х╝юнго╪╪©Д.");
+alert("ЙЁ└Л═∙Л═∙КЁ╢К╔╪ М≥∙Л²╦М∙≤Л└╦Л ■.");
 history.go(-1);
 </script>
 </c:if>

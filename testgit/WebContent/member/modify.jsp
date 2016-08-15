@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 
@@ -14,21 +14,21 @@
         var input = eval("document.input");
         
         if(!input.nickname.value) {
-            alert("´Ğ³×ÀÓÀ» ÀÔ·ÂÇÏ¼¼¿ä");
+            alert("ë‹‰ë„¤ì„ì„ ì…ë ¥í•˜ì„¸ìš”");
             return false;
         }
         
         if(!input.pw.value ) {
-            alert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+            alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
             return false;
         }
         if(input.pw.value != input.pw2.value){
-            alert("ºñ¹Ğ¹øÈ£¸¦ µ¿ÀÏÇÏ°Ô ÀÔ·ÂÇÏ¼¼¿ä");
+            alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ë™ì¼í•˜ê²Œ ì…ë ¥í•˜ì„¸ìš”");
             return false;
         }
 
         if(!input.email.value) {
-            alert("ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇÏ¼¼¿ä");
+            alert("ì´ë©”ì¼ì„ ì…ë ¥í•˜ì„¸ìš”");
             return false;
         }  
 
@@ -36,7 +36,7 @@
    }
     </script>
     
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body background="/testgit/image/blue.png"/>
@@ -59,7 +59,7 @@
 <table>
 <tr>
 <td width="70">
-´Ğ³×ÀÓ
+ë‹‰ë„¤ì„
 </td>
 
 <td>
@@ -77,7 +77,7 @@
 
 <tr>
 <td width="70">
-ºñ¹Ğ¹øÈ£
+ë¹„ë°€ë²ˆí˜¸
 </td>
 
 <td>
@@ -95,7 +95,7 @@
 
 <tr>
 <td width="70">
-ºñ¹Ğ¹øÈ£Áßº¹È®ÀÎ
+ë¹„ë°€ë²ˆí˜¸ì¤‘ë³µí™•ì¸
 </td>
 
 <td>
@@ -113,7 +113,7 @@
 
 <tr>
 <td width="70">
-ÀÌ¸ŞÀÏ
+ì´ë©”ì¼
 </td>
 
 <td>
@@ -128,14 +128,14 @@
 &nbsp;
 </td>
 <td>
-<font size="2" color="red">¡ØÀÌ¸ŞÀÏÀº °èÁ¤Á¤º¸ ºĞ½Ç½Ã, Ä£±¸Ã£±â½Ã »ç¿ëµÇ´Ï Á¤È®È÷ ÀÔ·ÂÇØÁÖ¼¼¿ä.</font>
+<font size="2" color="red">â€»ì´ë©”ì¼ì€ ê³„ì •ì •ë³´ ë¶„ì‹¤ì‹œ, ì¹œêµ¬ì°¾ê¸°ì‹œ ì‚¬ìš©ë˜ë‹ˆ ì •í™•íˆ ì…ë ¥í•´ì£¼ì„¸ìš”.</font>
 </td>
 </tr>
 </table>
 </center>
 
                 
-                <button style="margin-top:30px;" type="submit" class="btn btn-primary btn-lg btn-block">¼öÁ¤¿Ï·á</button>
+                <button style="margin-top:30px;" type="submit" class="btn btn-primary btn-lg btn-block">ìˆ˜ì •ì™„ë£Œ</button>
                 
                 
                 </div>

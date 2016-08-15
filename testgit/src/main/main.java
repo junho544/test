@@ -37,11 +37,11 @@ public class main {
 	public String main(memberDTO dto, HttpServletRequest request, HttpSession session){
 		
 		session = request.getSession();
-		session.setAttribute("nickname", dto.getNickname());
+		session.setAttribute("id", dto.getId());
 		
-		String nickname=(String)session.getAttribute("memNickname");
-		System.out.println(nickname);
-		dto.setNickname(nickname);
+		String id=(String)session.getAttribute("memId");
+		
+		dto.setId(id);
 	
 		memberDTO list =(memberDTO)sqlMap.queryForObject("sampleSQL.getMember", dto);
 

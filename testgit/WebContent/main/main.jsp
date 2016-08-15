@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -24,8 +24,8 @@ $(document).ready(function() {
 		
 		$("#form").html(aaa);
 	}
-	$("#getcomment").bind("click",function(){	// ÄÚ¸àÆ® ÀÔ·Â½Ã
-		alert("¾÷µ¥ÀÌÆ®");
+	$("#getcomment").bind("click",function(){	// ì½”ë©˜íŠ¸ ì…ë ¥ì‹œ
+		alert("ì—…ë°ì´íŠ¸");
 		obj=new Object();
 		obj.comment=document.getElementById("comment").value;
 		alert(obj.comment);
@@ -42,7 +42,7 @@ $(document).ready(function() {
 			$("#form").html(aaa);
 		}
 		function when(){
-			alert("¿¡·¯");
+			alert("ì—ëŸ¬");
 		}
 	});	
 	
@@ -77,7 +77,7 @@ $(document).ready(function() {
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -108,10 +108,10 @@ $(document).ready(function() {
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
     
-    <li><a href="">¿ì¸®Åå</a></li>  
-    <li><a href="">·£´ıÃ¤ÆÃ</a></li>
-    <li><a href="modify.now">ÇÁ·ÎÇÊ¼öÁ¤</a></li>
-    <li><a href="logout.now">·Î±×¾Æ¿ô</a></li>
+    <li><a href="">ìš°ë¦¬í†¡</a></li>  
+    <li><a href="">ëœë¤ì±„íŒ…</a></li>
+    <li><a href="modify.now">í”„ë¡œí•„ìˆ˜ì •</a></li>
+    <li><a href="logout.now">ë¡œê·¸ì•„ì›ƒ</a></li>
   </ul>
   </div>
   
@@ -124,11 +124,11 @@ $(document).ready(function() {
                 
                 <td rowspan="5">
                   <div class="form-group">
-    <label for="exampleTextarea">${member.nickname}´ÔÀÇ »óÅÂ¸Ş¼¼Áö</label>
+    <label for="exampleTextarea">${member.nickname}ë‹˜ì˜ ìƒíƒœë©”ì„¸ì§€</label>
     <textarea class="form-control" rows="5" id="comment" name="comment"
-    cols="60" style="resize: none;" placeholder="Áö±İ ¹«½¼ »ı°¢À» ÇÏ°í °è½Å°¡¿ä?"></textarea>
+    cols="60" style="resize: none;" placeholder="ì§€ê¸ˆ ë¬´ìŠ¨ ìƒê°ì„ í•˜ê³  ê³„ì‹ ê°€ìš”?"></textarea>
   </div>
-  <button style="margin-top:30px;" id="getcomment" type="botton" class="btn btn-primary btn-lg btn-block">¾÷µ¥ÀÌÆ®</button>
+  <button style="margin-top:30px;" id="getcomment" type="botton" class="btn btn-primary btn-lg btn-block">ì—…ë°ì´íŠ¸</button>
               </td>
                 
                 </tr>

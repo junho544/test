@@ -9,7 +9,7 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>우리 지금 만나</title>
 </head>
 <body background="/testgit/image/blue.png"/>

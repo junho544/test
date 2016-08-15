@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -12,7 +12,7 @@
 
   
     
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body background="/testgit/image/blue.png"/>
@@ -33,10 +33,10 @@
                 
 
 
-             <p>${nickname}´Ô '¿ì¸®Áö±Ý¸¸³ª' °¡ÀÔÀ» Áø½ÉÀ¸·Î °¨»çµå¸³´Ï´Ù.</p>
-             <p>·Î±×ÀÎ ÈÄ¿¡ ´Ù¾çÇÑ ÄÁÅÙÃ÷¸¦ ÀÌ¿ëÇØº¸¼¼¿ä.<p>
+             <p>${nickname}ë‹˜ 'ìš°ë¦¬ì§€ê¸ˆë§Œë‚˜' ê°€ìž…ì„ ì§„ì‹¬ìœ¼ë¡œ ê°ì‚¬ë“œë¦½ë‹ˆë‹¤.</p>
+             <p>ë¡œê·¸ì¸ í›„ì— ë‹¤ì–‘í•œ ì»¨í…ì¸ ë¥¼ ì´ìš©í•´ë³´ì„¸ìš”.<p>
                
-                <button style="margin-top:30px;" type="submit" class="btn btn-primary btn-lg btn-block">·Î±×ÀÎÇÏ·¯ °¡±â</button>
+                <button style="margin-top:30px;" type="submit" class="btn btn-primary btn-lg btn-block">ë¡œê·¸ì¸í•˜ëŸ¬ ê°€ê¸°</button>
                
                 
                 </div>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
@@ -33,7 +33,7 @@
 				<ul class="pagination">
 
 					<c:if test="${startPage>10 }">
-						<a href="boast_content.now?pageNum=${startPage - 10}&num=${num}">[¿Ã¿¸]</a>
+						<a href="boast_content.now?pageNum=${startPage - 10}&num=${num}">[Ïù¥Ï†Ñ]</a>
 					</c:if>
 
 					<c:forEach var="i" begin="${startPage}" end="${endPage}">
@@ -41,7 +41,7 @@
 					</c:forEach>
 
 					<c:if test="${endPage<pageCount }">
-						<a href="boast_content.now?pageNum=${startPage + 10 }&num=${num}">[¥Ÿ¿Ω]</a>
+						<a href="boast_content.now?pageNum=${startPage + 10 }&num=${num}">[Îã§Ïùå]</a>
 					</c:if>
 
 					<c:if test="${sessionScope.memNickname != null}">
