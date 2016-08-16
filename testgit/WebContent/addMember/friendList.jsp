@@ -27,9 +27,39 @@ function retext(thefield){
 	
 
 </script>
-<script>
-function chat(id,fid){
 
+<!-- <script>
+
+$(document).ready(function() {
+$('#foo').bind('click', function() {
+doSomething();
+});
+});
+var doSomething = function(){
+$('#foo').unbind('click');
+$.ajax({
+type: "POST",
+url: "some.do"
+}).done(function() {
+$('#foo').bind('click', function() {
+doSomething();
+});
+});
+}
+</script> -->
+
+
+<script>
+
+
+
+
+function chat(id,fid){
+	var ajax_last_num = 0;//ajax 중복요청왔을때 계속 ajax success 코드가 실행되는 것을 방지하기 위해 마지막 요청 카운트 저장. 전역변수
+	 //ajax 요청 시작하기 전에. ajax 요청이 들어있는 함수내의 지역변수
+	 var current_ajax_num = ajax_last_num; //ajax 중복요청왔을때 계속 ajax success 코드가 실행되는 것을 방지하기 위해 지금 들어온 요청의 카운트 저장
+	 
+	
 	$.ajax({
 	type:"post",
 	url :"chat.now?id="+id+"&friend_id="+fid,

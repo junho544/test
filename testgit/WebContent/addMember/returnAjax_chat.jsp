@@ -22,65 +22,78 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script type="text/javascript">
+
+
 var socket ;
 	$(document).ready(function() {
 		$("#chat").focus();
 		var socket = io.connect("http://localhost:12345");
 		
 		socket.on('response', function(msg){
-			var se2 = '${id}';
-			var se = '${sessionScope.memId}';
+			
+			var se = '${random}';
 			console.log("receive message :: " + msg.msg);
-			alert(se2);
 			
-			if(se==se2){
-				alert("세션맞음");
-			$('.msgs').append(
-			msg.msg+":"+'${sessionScope.memId}'+'<BR><BR>'+
-			'<div class="clear"></div>');
 			
-			$("#chat").focus();
-			}
-			if(se!=se2){
-				alert("세션틀림");
-				$('.msgs').append(
-				msg.msg+":"+'${sessionScope.memId}'+'<BR><BR>'+
-				'<div class="clear"></div>');
+			if(msg.dd==se){
 				
-				$("#chat").focus();
-				}
+		
+				$('#msgs').append(
+"<div class=from-me style='float:right;'>"+msg.msg+":"
++'${sessionScope.memId}'+'</div><BR><BR>'+'<div class="clear"></div>');// 
+			$("#chat").focus();
+			
+			
+			
+			}
+			if(msg.dd!=se){
+				
+				
+			$('#msgs').append(
+	'${friend_id}'+":"+msg.msg+'<BR><BR>'+'<div class="clear"></div>');	
+					
+		
+			$("#chat").focus();
+			
+			}
 			
 			});
 
-		
 
-		$("#send").bind("click", function() {
+
+		$("#send"+'${random}').bind("click", function() {
+			var dd = '${random}';
+			
+			
 			if($('#chat').val() == ""){
 				return;
 			}
 			var msg = $("input[name=chat]").val();
 			
-			socket.emit('msg', {msg:msg});
+			
+			socket.emit('msg', {msg:msg , dd:dd});
 			$(':text:not([id=sdrrate])').val('');
 			
-			 $("#talkfield").scrollTop($("#talkfield")[0].scrollHeight);
-			/* alert(msg); */
+			$(".scrolltbody1").scrollTop($(".scrolltbody1")[0].scrollHeight);
+		
 		}); 
 		
-		
+		 
 		
 		$('#chat').keydown(function() {
+			var dd = '${random}';
+			
 			if(event.keyCode==13){	
 				if($('#chat').val() == ""){ 
 		    		//chat의 값이 ""이면 return. 아무것도 되지 않음
 					return;
 		   		}
 				var msg = $('#chat').val();
-				socket.emit('msg', {msg:msg});
+				socket.emit('msg', {msg:msg , dd:dd});
 		
 		$(':text:not([id=searchFriend])').val('');
 		
-		 $("#talkfield").scrollTop($("#talkfield")[0].scrollHeight); 
+		$(".scrolltbody1").scrollTop($(".scrolltbody1")[0].scrollHeight);
 		
 			
 			}
@@ -88,7 +101,6 @@ var socket ;
 		});
 	});
 	
-
 </script>
 
 
@@ -99,19 +111,23 @@ var socket ;
 
 	
 			
-	 <table class="scrolltbody">
-	   <tbody>
+			
+  <table class="scrolltbody">
+	   <tbody class="scrolltbody1">
 	 	  <tr><td>
-	 <div id="msgs" class="msgs">대화방에 입장하셨습니다 <br /> <br /></div>	
+	
+	  <div id="msgs">대화방에 입장하셨습니다 <br /> <br /></div>
     	</td></tr>
  	 </tbody>
-  </table>
+  </table>  
+			
+			
 
 
 
 	
 	<input type="text" name="chat" id="chat" size="35" onkeyup="JavaScript:chat_enter1();" /> 
-	<input type="button" value="전송" id="send" /><br />
+	<input type="button" value="전송" id="send${random}" /><br />
 	
 	
 
@@ -122,34 +138,19 @@ var socket ;
 <style>
 .scrolltbody {
     display: block;
-    width: 320px;
+    width: 300px;
     height:550px; 
-   
+  
     
 }
 
 
 .scrolltbody tbody {
     display: block;
-    height: 550px;
+    height: 540px;
     overflow: auto;
 }
-.scrolltbody #msgs
-{
 
-text-align:right;
-float:right;
-width:300px;
-
-}
-.scrolltbody .msgs
-{
-
-text-align:left;
-float:left;
-width:300px;
-
-}
 </style>
  
 

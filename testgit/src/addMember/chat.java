@@ -1,6 +1,6 @@
 package addMember;
 
-import java.util.List;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -20,10 +20,14 @@ public class chat {
 	
 	@RequestMapping("chat.now")
 	public String invite(nowDTO dto , HttpServletRequest request,HttpSession session){
+		Random rand = new Random();		//...(2)
+		int value = rand.nextInt(100);	//...(3)
+		System.out.println(value);
+		request.setAttribute("random", new Integer(value));
+		
 		String id = request.getParameter("id");
 		String friend_id = request.getParameter("friend_id");
-		System.out.println(id);
-		System.out.println(friend_id);
+		
 		request.setAttribute("friend_id", friend_id);
 		request.setAttribute("id", id);
 		return "/addMember/returnAjax_chat.jsp";
