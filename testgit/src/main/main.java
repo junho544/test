@@ -54,11 +54,15 @@ public class main {
 	public String commentBoard( HttpServletRequest request,HttpSession session,@RequestBody String data) throws Exception {
 		
 		
-		String nickname=(String)session.getAttribute("memNickname");
+		String id=(String)session.getAttribute("memId");
+		
+		String nickname=(String)sqlMap.queryForObject("sampleSQL.getNick", id);
+
 //*****************************************************************
-		System.out.println(data);
+		
 		JSONObject json=new JSONObject();
 		json = (JSONObject) JSONValue.parse(data);
+		System.out.println("data="+data);
 		String comment=(String)json.get("comment");
 		
 		if(comment != null){
@@ -68,9 +72,9 @@ public class main {
 			commentDTO.setNickname(nickname);
 			sqlMap.insert("insertB_comment",commentDTO);
 			}	
-		//������
+		
 			String pageNum =json.get("pageNum").toString();
-			System.out.println(pageNum);
+			
 			if (pageNum == null) {
 				pageNum = "1";
 			}

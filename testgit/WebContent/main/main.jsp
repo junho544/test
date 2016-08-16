@@ -38,8 +38,8 @@ $(document).ready(function() {
 		
 		$.ajax({
 			type : "post",
-			url : "boast_comment.now",
-			data : JSON.stringify(obj),
+			url : "/testgit/boast_comment.now",
+			data : JSON.stringify(comment),
 			success :test2,
 			error : when
 		});
