@@ -28,17 +28,29 @@ var socket ;
 		var socket = io.connect("http://localhost:12345");
 		
 		socket.on('response', function(msg){
-			
-		
+			var se2 = '${id}';
+			var se = '${sessionScope.memId}';
 			console.log("receive message :: " + msg.msg);
+			alert(se2);
 			
-			
-			$('#msgs').append(
+			if(se==se2){
+				alert("세션맞음");
+			$('.msgs').append(
 			msg.msg+":"+'${sessionScope.memId}'+'<BR><BR>'+
 			'<div class="clear"></div>');
 			
 			$("#chat").focus();
-		});
+			}
+			if(se!=se2){
+				alert("세션틀림");
+				$('.msgs').append(
+				msg.msg+":"+'${sessionScope.memId}'+'<BR><BR>'+
+				'<div class="clear"></div>');
+				
+				$("#chat").focus();
+				}
+			
+			});
 
 		
 
@@ -56,6 +68,7 @@ var socket ;
 		}); 
 		
 		
+		
 		$('#chat').keydown(function() {
 			if(event.keyCode==13){	
 				if($('#chat').val() == ""){ 
@@ -65,7 +78,7 @@ var socket ;
 				var msg = $('#chat').val();
 				socket.emit('msg', {msg:msg});
 		
-		$(':text:not([id=sdrrate])').val('');
+		$(':text:not([id=searchFriend])').val('');
 		
 		 $("#talkfield").scrollTop($("#talkfield")[0].scrollHeight); 
 		
@@ -89,7 +102,7 @@ var socket ;
 	 <table class="scrolltbody">
 	   <tbody>
 	 	  <tr><td>
-	 <div id="msgs">대화방에 입장하셨습니다 <br /> <br /></div>	
+	 <div id="msgs" class="msgs">대화방에 입장하셨습니다 <br /> <br /></div>	
     	</td></tr>
  	 </tbody>
   </table>
@@ -98,8 +111,8 @@ var socket ;
 
 	
 	<input type="text" name="chat" id="chat" size="35" onkeyup="JavaScript:chat_enter1();" /> 
-	<input type="button" value="전송" id="send" />
-
+	<input type="button" value="전송" id="send" /><br />
+	
 	
 
 </body>
@@ -126,6 +139,14 @@ var socket ;
 
 text-align:right;
 float:right;
+width:300px;
+
+}
+.scrolltbody .msgs
+{
+
+text-align:left;
+float:left;
 width:300px;
 
 }

@@ -28,11 +28,11 @@ function retext(thefield){
 
 </script>
 <script>
-function chat(){
+function chat(id,fid){
 
 	$.ajax({
 	type:"post",
-	url :"chat.now",
+	url :"chat.now?id="+id+"&friend_id="+fid,
 	
 	success:accpt,
 	error:error
@@ -75,7 +75,7 @@ function error(){
 		   	</tr>
 		   	<tr>
 		   	<td><span id="memSearch"><input type="text" onFocus="clearText(this)" onblur="retext(this)" 
-		   	value="친구검색하기/자동완성" size="30px"></span></td>
+		   	value="친구검색하기/자동완성" size="30px" id="searchFriend"></span></td>
 		   	</tr>
 		
     	</table>
@@ -106,7 +106,7 @@ function error(){
     
     <li><a>쪽지보내기</a></li>  
     <li><a>프로필보기</a></li>
-    <li><a  onclick="chat();">대화시작</a></li>
+    <li><a  onclick="chat('${sessionScope.memId}','${friend.id}');">대화시작</a></li>
 
   </ul>
   </div>

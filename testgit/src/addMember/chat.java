@@ -20,15 +20,12 @@ public class chat {
 	
 	@RequestMapping("chat.now")
 	public String invite(nowDTO dto , HttpServletRequest request,HttpSession session){
-		String id=(String)session.getAttribute("memId");
-		dto.setFriend_id(id);
-		
-		int inviteNumber = (Integer)sqlMap.queryForObject("sampleSQL.inviteNumber",dto);
-		request.setAttribute("inviteNumber", new Integer(inviteNumber));
-		
-		List inviteList = (List)sqlMap.queryForList("sampleSQL.inviteList", dto);
-		request.setAttribute("inviteList", inviteList);
-		
+		String id = request.getParameter("id");
+		String friend_id = request.getParameter("friend_id");
+		System.out.println(id);
+		System.out.println(friend_id);
+		request.setAttribute("friend_id", friend_id);
+		request.setAttribute("id", id);
 		return "/addMember/returnAjax_chat.jsp";
 	}
 	
