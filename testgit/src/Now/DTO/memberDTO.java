@@ -9,8 +9,15 @@ private String pw;
 private String pwcheck;
 private String email;
 private String reason;
+private String talk;
 
 
+public String getTalk() {
+	return talk;
+}
+public void setTalk(String talk) {
+	this.talk = talk;
+}
 public String getId() {
 	return id;
 }

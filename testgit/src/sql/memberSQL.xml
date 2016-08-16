@@ -25,6 +25,11 @@
         where ID=#id#
 </update>
 
+<update id="talkUpdate" parameterClass="member">
+        update nowmember set talk=#talk#
+        where ID=#id#
+</update>
+
 
 <delete id="nowDelete" parameterClass="member">
        delete from nowmember where ID=#id# and PW=#pw#

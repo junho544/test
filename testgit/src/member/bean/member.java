@@ -128,12 +128,43 @@ public class member {
 		return "/member/delete.jsp";
 		}
 		
+		}
+		
 
 		
-	}
+	
+	
+	@RequestMapping("talk.now")
+	private String talk(memberDTO dto,HttpSession session, HttpServletRequest request)throws Exception{
+		
+		
+		String id=(String)session.getAttribute("memId");
+		dto=(memberDTO)sqlMap.queryForObject("sampleSQL.getMember", id);
+		
+
+
+		request.setAttribute("member", dto);
+	
+		return "/member/talk.jsp";
+}
+	
+	@RequestMapping("talkpro.now")
+	private String talkpro(memberDTO dto,HttpSession session, HttpServletRequest request)throws Exception{
+		
+		
+		String id=(String)session.getAttribute("memId");
+		
+		String talk=request.getParameter("talk");
+		
+		dto.setId(id);
+		dto.setTalk(talk);
+		
+		sqlMap.update("sampleSQL.talkUpdate", dto);
 
 	
-	
+		return "/member/talk.jsp";
 }
+	
+	}
 	
 

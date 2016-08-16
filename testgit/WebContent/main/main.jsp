@@ -69,6 +69,15 @@ $(document).ready(function() {
 	});
 });
 
+
+
+function changetalk() {
+url = "/testgit/talk.now";
+    
+    
+    window.open(url, "create", 'left='+(screen.availWidth-620)/2+',top='+(screen.availHeight-500)/2+', width=620px,height=350px');
+}
+
 </script>
 
 
@@ -173,6 +182,11 @@ $(document).ready(function() {
   
                 <p>${member.nickname}</p>
                 ${member.email}
+                <p>${member.talk}
+                 <button type="button" class="btn btn-info btn-xs"
+                 onclick="changetalk()"><span class="glyphicon glyphicon-pencil"></span> </button>
+                </p>
+               
                 </td>
                 </tr>
                 </table>
