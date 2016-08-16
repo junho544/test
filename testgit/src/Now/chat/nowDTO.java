@@ -10,7 +10,14 @@ public class nowDTO {
 	private String id;
 	private String image;
 	private String friend_image;
+	private String talk;
 	
+	public String getTalk() {
+		return talk;
+	}
+	public void setTalk(String talk) {
+		this.talk = talk;
+	}
 	public String getImage() {
 		return image;
 	}

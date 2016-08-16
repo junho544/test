@@ -52,7 +52,9 @@ function error(){
  	
 	<div id="kyung">
  	
- 	<div id="return2">그림/배너</div>
+ 	<div id="return2">그림/배너<br />
+  
+ 	</div>
  	</div>
  	
  	
@@ -85,9 +87,12 @@ function error(){
    
    	<div id="contentsMember">
     	
+    	<div style="float:left;">
+    	<span id="imgg"><img src="/testgit/image/profile.jpg"/></span>
+    	${userinfor.nickname} 　　　　　　　 ${userinfor.talk}</div> <br />
     	<table>
-    	검색창에 이름을 치면 return 페이지로 친구들 보여주기
-    	<c:forEach var="friend" items="${friendList}"> 
+    	<br /><br />
+    	<c:forEach var="friend" items="${friendInfor}"> 
     	
     	<tr><td><div id="memList"><font color=green>●</font>
     	<span id="imgg"><img src="/testgit/image/profile.jpg"/></span> 
@@ -95,7 +100,7 @@ function error(){
     	
     	 <div class="dropdown">
     <button id="btn"class="btn btn-info btn-sm" type="button" data-toggle="dropdown">
-    <b>${friend.friend_nickname}</b>
+    <b>${friend.nickname}</b>
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
     
@@ -106,7 +111,8 @@ function error(){
   </ul>
   </div>
 
-    	 / <font size="1">상태메세지 또는 대화명</font></il></div></td></tr>
+    	  <font size="1">${friend.talk}
+    	  </font></il></div></td></tr>
     	
     	</c:forEach>
     	</table>

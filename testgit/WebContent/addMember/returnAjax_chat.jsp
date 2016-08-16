@@ -89,7 +89,7 @@ var socket ;
 	 <table class="scrolltbody">
 	   <tbody>
 	 	  <tr><td>
-	 <div id="msgs"></div>	
+	 <div id="msgs">대화방에 입장하셨습니다 <br /> <br /></div>	
     	</td></tr>
  	 </tbody>
   </table>
