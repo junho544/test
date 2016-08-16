@@ -22,7 +22,7 @@ $(document).ready(function() {
 	
 	$.ajax({
 		type : "post",
-		url : "boast_comment.now",
+		url : "/testgit/boast_comment.now",
 		data : JSON.stringify(obj),
 		success :test,
 	});

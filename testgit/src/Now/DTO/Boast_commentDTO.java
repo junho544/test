@@ -4,16 +4,11 @@ import java.sql.Timestamp;
 
 public class Boast_commentDTO {
 
-	private int boast_num;
+
 	private String nickname;
 	private String boast_comment;
 	private Timestamp reg_date;
-	public int getBoast_num() {
-		return boast_num;
-	}
-	public void setBoast_num(int boast_num) {
-		this.boast_num = boast_num;
-	}
+
 	public String getNickname() {
 		return nickname;
 	}
