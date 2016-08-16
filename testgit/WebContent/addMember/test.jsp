@@ -113,7 +113,7 @@ $('.imgSelect').click(function(e) {
 url = "/testgit/friendlist.now";
         
         
-        window.open(url, "create", 'left='+(screen.availWidth-650)/2+',top='+(screen.availHeight-500)/2+', width=530px,height=650px');
+        window.open(url, "create", 'left='+(screen.availWidth-620)/2+',top='+(screen.availHeight-500)/2+', width=620px,height=650px');
     }
 </script>
 

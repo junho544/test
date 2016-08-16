@@ -41,11 +41,11 @@ function retext(thefield){
 		   	</tr>
 		   	<tr>
 		   	<td><span id="memSearch"><input type="text" onFocus="clearText(this)" onblur="retext(this)" 
-		   	value="친구검색하기/자동완성"></span></td>
+		   	value="친구검색하기/자동완성" size="30px"></span></td>
 		   	</tr>
 		   	
     	</table>
-    </div>
+    
 
     <div class="contents">
    
@@ -86,13 +86,17 @@ function retext(thefield){
     	</c:forEach>
     	</table>
     	</span>
-    	
+    	    	
 	</div>
-</div>  
+	
+	
 
-<c:forEach var="userlist" items="${userlist}">
-   <div class='imgSelect' onclick="member('${userlist.id}')">${userlist.nickname}</div><br />
-</c:forEach>
+	
+	
+	
+	
+	
+</div>  
 
 
 
