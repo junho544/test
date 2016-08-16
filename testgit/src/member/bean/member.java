@@ -162,7 +162,7 @@ public class member {
 		sqlMap.update("sampleSQL.talkUpdate", dto);
 
 	
-		return "/member/talk.jsp";
+		return "/member/talkpro.jsp";
 }
 	
 	}
