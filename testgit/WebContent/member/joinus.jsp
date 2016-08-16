@@ -10,6 +10,14 @@
     <link href="/testgit/css/business-casual.css" rel="stylesheet">
     <script language="JavaScript">
     
+    
+    
+    function goback(){
+    	history.go(-1);
+    }
+    
+    
+    
     function checkIt() {
         var input = eval("document.input");
         
@@ -45,6 +53,7 @@
 <title>Insert title here</title>
 </head>
 <body background="/testgit/image/blue.png"/>
+<img src="/testgit/image/back.png" onclick="goback();" style="cursor: pointer;"/>
 
 
 
@@ -54,7 +63,7 @@
 
 
 <center>
-<img style="margin-top:100px;" src="/testgit/image/join.png"/>
+<img src="/testgit/image/join.png"/>
 </center>
         <div class="row">
             <div class="box">

@@ -10,6 +10,15 @@
     <link href="/testgit/css/business-casual.css" rel="stylesheet">
     <script language="JavaScript">
     
+
+
+    function goback(){
+    	history.go(-1);
+    }
+
+
+    
+    
     function checkIt() {
         var input = eval("document.input");
         
@@ -62,7 +71,7 @@
 <title>Insert title here</title>
 </head>
 <body background="/testgit/image/blue.png"/>
-
+<img src="/testgit/image/back.png" onclick="goback();" style="cursor: pointer;"/>
 
 
 <form name="input" action="modifypro.now" method="post" onSubmit="return checkIt()"/>
@@ -71,7 +80,7 @@
 
 
 <center>
-<img style="margin-top:100px;" src="/testgit/image/mypage.png"/>
+<img src="/testgit/image/mypage.png"/>
 </center>
         <div class="row">
             <div class="box">

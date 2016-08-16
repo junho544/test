@@ -9,6 +9,12 @@
 
 
 <script>
+
+function goback(){
+	history.go(-1);
+}
+
+
 $(document).ready(function() {
 	var obj=new Object();
 
@@ -81,7 +87,7 @@ $(document).ready(function() {
 <title>Insert title here</title>
 </head>
 <body>
-
+<img src="/testgit/image/back.png" onclick="goback();" style="cursor: pointer;"/>
 
 
 <form method="post" name="commentform" action="">
@@ -90,7 +96,7 @@ $(document).ready(function() {
 
 
 <center>
-<img src="/testgit/image/main.png"/>
+<img src="/testgit/image/main555.png"/>
 </center>
         <div class="row">
             <div class="box">

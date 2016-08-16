@@ -2,7 +2,13 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<script>
 
+function goback(){
+	history.go(-1);
+}
+
+</script>
 
 <html>
 <head>
@@ -16,7 +22,7 @@
 <title>Insert title here</title>
 </head>
 <body background="/testgit/image/blue.png"/>
-
+<img src="/testgit/image/back.png" onclick="goback();" style="cursor: pointer;"/>
 
 
 <form name="input" action="firstview.now" method="post"/>
@@ -25,7 +31,7 @@
 
 
 <center>
-<img style="margin-top:150px;" src="/testgit/image/joinok.png"/>
+<img style="margin-top:50px;" src="/testgit/image/joinok.png"/>
 </center>
         <div class="row">
             <div class="box">
