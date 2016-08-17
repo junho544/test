@@ -5,8 +5,8 @@
 	 <typeAlias alias="member" type="Now.DTO.memberDTO"/> 
 	
 	<insert id="joinmember" parameterClass="member">
-		insert into nowmember (ID,NICKNAME,PW,EMAIL)
-		values(#id#,#nickname#,#pw#,#email#)
+insert into nowmember (ID,NICKNAME,PW,EMAIL,NUM)
+		values(#id#,#nickname#,#pw#,#email#,num.NEXTVAL)
 	</insert>
 	
 	

@@ -10,6 +10,7 @@ private String pwcheck;
 private String email;
 private String reason;
 private String talk;
+private int num;
 
 
 public String getTalk() {
@@ -53,6 +54,12 @@ public String getReason() {
 }
 public void setReason(String reason) {
 	this.reason = reason;
+}
+public int getNum() {
+	return num;
+}
+public void setNum(int num) {
+	this.num = num;
 }
 
 
