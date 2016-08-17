@@ -61,5 +61,8 @@
 	delete addmember_wait where id=#id# and friend_id=#friend_id#
 	</delete>
 	
+	<!-- <create id="createChatRoom">
+	
+	</create> -->
 </sqlMap>
 

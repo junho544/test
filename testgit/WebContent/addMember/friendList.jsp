@@ -15,6 +15,8 @@
 
 
 <link rel="stylesheet" type="text/css" href="/testgit/css/main/main.css">
+
+
 <script>
 function clearText(thefield){
 	if (thefield.defaultValue==thefield.value)
@@ -28,58 +30,68 @@ function retext(thefield){
 
 </script>
 
-<!-- <script>
-
-$(document).ready(function() {
-$('#foo').bind('click', function() {
-doSomething();
-});
-});
-var doSomething = function(){
-$('#foo').unbind('click');
-$.ajax({
-type: "POST",
-url: "some.do"
-}).done(function() {
-$('#foo').bind('click', function() {
-doSomething();
-});
-});
-}
-</script> -->
-
-
+<div id="ddd">
 <script>
+/* var list1 = new Array();
+<c:forEach items="${friendInfor}" var="item1">
+
+list1.push("${item1.id}");
+
+</c:forEach>
+var i=22;
+for ( var i = 0; i < list1.length; i++) {
+   
+    var i = list1[i];
+  	
+} */
+
+var count=0;
+function reload(id,fid,num,test){
+	alert("일로옴");
+
+	chat(id,fid,num,test);
+	
+}
+function chat(id,fid,num,test){
+	
+	var my_num = '${userinfor.num}';
+	var user_friend = my_num+num;
+	var friend_user = num+my_num;
 
 
-
-
-function chat(id,fid){
-	var ajax_last_num = 0;//ajax 중복요청왔을때 계속 ajax success 코드가 실행되는 것을 방지하기 위해 마지막 요청 카운트 저장. 전역변수
-	 //ajax 요청 시작하기 전에. ajax 요청이 들어있는 함수내의 지역변수
-	 var current_ajax_num = ajax_last_num; //ajax 중복요청왔을때 계속 ajax success 코드가 실행되는 것을 방지하기 위해 지금 들어온 요청의 카운트 저장
-	 
 	
 	$.ajax({
+
 	type:"post",
-	url :"chat.now?id="+id+"&friend_id="+fid,
+	url :"chat.now?id="+id+"&friend_id="+fid+"&user_friend="+user_friend+"&friend_user="+friend_user,
 	
 	success:accpt,
 	error:error
 		
-	});	
-}
+	}); 
+	
+	}
+	
+	    
+	 
+
+
+
 
 function accpt(bbb){
 	
 	$("#return2").html(bbb);
+	 
+	return false;
 	
 }
 function error(){
 	alert("수락에러");
 }
 </script>
- 	
+</div>
+ 
+ 
 	<div id="kyung">
  	
  	<div id="return2">그림/배너<br />
@@ -122,8 +134,9 @@ function error(){
     	${userinfor.nickname} 　　　　　　　 ${userinfor.talk}</div> <br />
     	<table>
     	<br /><br />
-    	<c:forEach var="friend" items="${friendInfor}"> 
-    	
+
+ <c:forEach var="friend" items="${friendInfor}" varStatus="i"> 
+
     	<tr><td><div id="memList"><font color=green>●</font>
     	<span id="imgg"><img src="/testgit/image/profile.jpg"/></span> 
     	<il id="profileUser">
@@ -132,35 +145,93 @@ function error(){
     <button id="btn"class="btn btn-info btn-sm" type="button" data-toggle="dropdown">
     <b>${friend.nickname}</b>
   <span class="caret"></span></button>
-  <ul class="dropdown-menu">
+  <ul class="dropdown-menu">  
+    <li><a >쪽지보내기</a></li>  
+    <li><a >프로필보기</a></li>
     
-    <li><a>쪽지보내기</a></li>  
-    <li><a>프로필보기</a></li>
-    <li><a  onclick="chat('${sessionScope.memId}','${friend.id}');">대화시작</a></li>
+   
+    <li ><a id="${friend.id}"onclick="reload('${sessionScope.memId}','${friend.id}','${friend.num}','${test}');">대화시작</a></li>
 
   </ul>
   </div>
-
-    	  <font size="1">${friend.talk}
+    	  <font size="1">${friend.talk} 
     	  </font></il></div></td></tr>
-    	
     	</c:forEach>
     	</table>
     	</div>
 		 </div>   
 	
-	</div>
 	
+	<%-- <a id="foo${test}" >클릭</a> --%>
+	<%-- <input type="hidden" value="hid" id="check${test}" /> --%>
+	</div>
 </div>  
 
 
 
+<!-- 
+<script>
+ function chat(){
+	 	var id =  $('#check${test}').val() ; 
+		alert(id);
+		var bb='${test2}';
+		alert(bb);
+			
+			
+		var my_num = '${userinfor.num}';
+		var user_friend = my_num+num;
+		var friend_user = num+my_num;
+		
+		
+		$.ajax({
+		type:"post",
+		url :"chat.now?id="+id+"&friend_id="+fid+"&user_friend="+user_friend+"&friend_user="+friend_user,
+		
+		success:accpt,
+		error:error
+			
+		});}
 
 
+	function accpt(bbb){
+		$("#return2").html(bbb);
+		
+	}
+	function error(){
+		alert("수락에러");
+	}
+
+	$(document).ready(function() {
+		  $('#foo${test2}').bind('click', function() {
+			
+		    doSomething();  
+		  });
+		});
+		 
+		var doSomething = function(){
+		  $('#foo${test2}').unbind('click');
+		  	 chat();
+		 done(function() {
+		    $('#foo').bind('click', function() {
+		    	alert("3");
+		      doSomething();  
+		    });    
+		  });
+		}
+
+</script>
+
+ -->
 
 
-
-
+<%-- 	<c:forEach items="${friendInfor}" var="item1">
+	list1.push("${item1.id}");
+	if(fid=='${item1.id}'){
+	$('#${item1.id}').removeAttr('onclick');
+	}
+	var s = '#${item1.id}';
+	
+	</c:forEach> --%>
 
 
 

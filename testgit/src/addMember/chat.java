@@ -20,14 +20,20 @@ public class chat {
 	
 	@RequestMapping("chat.now")
 	public String invite(nowDTO dto , HttpServletRequest request,HttpSession session){
-		Random rand = new Random();		//...(2)
-		int value = rand.nextInt(100);	//...(3)
-		System.out.println(value);
+		Random rand = new Random();		
+		int value = rand.nextInt(100);	
+		
 		request.setAttribute("random", new Integer(value));
 		
+		String user_friend = request.getParameter("user_friend");
+		String friend_user = request.getParameter("friend_user");
 		String id = request.getParameter("id");
 		String friend_id = request.getParameter("friend_id");
 		
+		int bb = 1;
+		request.setAttribute("bb", new Integer(bb));
+		request.setAttribute("friend_user", friend_user);
+		request.setAttribute("user_friend", user_friend);
 		request.setAttribute("friend_id", friend_id);
 		request.setAttribute("id", id);
 		return "/addMember/returnAjax_chat.jsp";

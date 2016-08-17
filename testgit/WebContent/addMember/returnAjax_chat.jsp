@@ -32,12 +32,13 @@ var socket ;
 		socket.on('response', function(msg){
 			
 			var se = '${random}';
+		
 			console.log("receive message :: " + msg.msg);
 			
-			
+	if(msg.num_m=='${user_friend}' || msg.num_m=='${friend_user}'){
+			alert("작동");
 			if(msg.dd==se){
-				
-		
+
 				$('#msgs').append(
 "<div class=from-me style='float:right;'>"+msg.msg+":"
 +'${sessionScope.memId}'+'</div><BR><BR>'+'<div class="clear"></div>');// 
@@ -57,13 +58,13 @@ var socket ;
 			
 			}
 			
-			});
+	}});
 
 
 
 		$("#send"+'${random}').bind("click", function() {
 			var dd = '${random}';
-			
+			var num_m = '${user_friend}';
 			
 			if($('#chat').val() == ""){
 				return;
@@ -71,7 +72,7 @@ var socket ;
 			var msg = $("input[name=chat]").val();
 			
 			
-			socket.emit('msg', {msg:msg , dd:dd});
+			socket.emit('msg', {msg:msg , dd:dd , num_m:num_m});
 			$(':text:not([id=sdrrate])').val('');
 			
 			$(".scrolltbody1").scrollTop($(".scrolltbody1")[0].scrollHeight);
@@ -82,6 +83,9 @@ var socket ;
 		
 		$('#chat').keydown(function() {
 			var dd = '${random}';
+			var num_m = '${user_friend}';
+			
+			
 			
 			if(event.keyCode==13){	
 				if($('#chat').val() == ""){ 
@@ -89,7 +93,7 @@ var socket ;
 					return;
 		   		}
 				var msg = $('#chat').val();
-				socket.emit('msg', {msg:msg , dd:dd});
+				socket.emit('msg', {msg:msg , dd:dd ,num_m:num_m});
 		
 		$(':text:not([id=searchFriend])').val('');
 		

@@ -2,6 +2,7 @@ package addMember;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -137,14 +138,15 @@ public class addmember {
 	public String friendlist(HttpServletRequest request,HttpSession session, Object nowDTO){
 		nowDTO dto = new nowDTO();
 		List <nowDTO>friendInfor = new ArrayList();
+		
 		String id = (String)session.getAttribute("memId");
 		dto.setId(id);
 		nowDTO userinfor = (nowDTO)sqlMap.queryForObject("sampleSQL.userinfor", dto);
 		List friendList = (List)sqlMap.queryForList("sampleSQL.friendList",dto);
 		
 		
-		
 		for(int i =0; i<friendList.size();i++){
+		
 		nowDTO app = new nowDTO();
 		app.setId(((Now.chat.nowDTO) friendList.get(i)).getFriend_id());
 		nowDTO friend = (nowDTO)sqlMap.queryForObject("sampleSQL.userinfor", app);
@@ -153,8 +155,8 @@ public class addmember {
 		
 		}
 		
-		request.setAttribute("friendInfor",friendInfor);
 		
+		request.setAttribute("friendInfor",friendInfor);
 		request.setAttribute("userinfor",userinfor);
 		
 		return "/addMember/friendList.jsp";
