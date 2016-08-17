@@ -40,9 +40,15 @@ public class main {
 		System.out.println(id);
 		dto=(memberDTO)sqlMap.queryForObject("sampleSQL.getMember", id);
 		
+		
+		String pageNum=request.getParameter("pageNum");
+		if (pageNum == null) {
+			pageNum = "1";
+		}
 
 
 		request.setAttribute("member", dto);
+		request.setAttribute("pageNum",pageNum);
 		
 		
 		return "/main/main.jsp";
@@ -50,7 +56,7 @@ public class main {
 	
 	
 	
-	@RequestMapping("boast_comment.now")
+	@RequestMapping(value="boast_comment.now")
 	public String commentBoard( HttpServletRequest request,HttpSession session,@RequestBody String data) throws Exception {
 		
 		

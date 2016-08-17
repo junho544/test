@@ -17,12 +17,13 @@ function goback(){
 
 $(document).ready(function() {
 	var obj=new Object();
+	obj.pageNum=${pageNum};
 
 	
 	
 	$.ajax({
 		type : "post",
-		url : "/testgit/boast_comment.now",
+		url : "boast_comment.now",
 		data : JSON.stringify(obj),
 		success :test,
 	});
@@ -31,21 +32,24 @@ $(document).ready(function() {
 		$("#form").html(aaa);
 	}
 	$("#getcomment").bind("click",function(){	// 코멘트 입력시
-		alert("업데이트");
+		
 		obj=new Object();
 		obj.comment=document.getElementById("comment").value;
+		obj.pageNum=${pageNum};
 		alert(obj.comment);
 		
 		$.ajax({
 			type : "post",
-			url : "/testgit/boast_comment.now",
-			data : JSON.stringify(comment),
+			url : "boast_comment.now",
+			data : JSON.stringify(obj),
 			success :test2,
 			error : when
 		});
 		function test2(aaa){
 		
 			$("#form").html(aaa);
+			alert("성공");
+			
 		}
 		function when(){
 			alert("에러");
