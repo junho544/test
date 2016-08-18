@@ -46,14 +46,13 @@ for ( var i = 0; i < list1.length; i++) {
 } */
 
 var count=0;
-function reload(id,fid,num,test){
-	alert("일로옴");
 
-	chat(id,fid,num,test);
-	
-}
 function chat(id,fid,num,test){
+
 	
+		
+		
+	alert("1");
 	var my_num = '${userinfor.num}';
 	var user_friend = my_num+num;
 	var friend_user = num+my_num;
@@ -81,13 +80,20 @@ function chat(id,fid,num,test){
 function accpt(bbb){
 	
 	$("#return2").html(bbb);
-	 
-	return false;
+	
+	reload();
+	
 	
 }
 function error(){
 	alert("수락에러");
 }
+
+function reload(){
+	$("#test").load();
+	
+}
+setInterval('reload()', 1000); 
 </script>
 </div>
  
@@ -150,7 +156,7 @@ function error(){
     <li><a >프로필보기</a></li>
     
    
-    <li ><a id="${friend.id}"onclick="reload('${sessionScope.memId}','${friend.id}','${friend.num}','${test}');">대화시작</a></li>
+    <li ><a id="test"onclick="chat('${sessionScope.memId}','${friend.id}','${friend.num}','${test}');">대화시작</a></li>
 
   </ul>
   </div>
