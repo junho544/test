@@ -36,7 +36,7 @@ $(document).ready(function() {
 		obj=new Object();
 		obj.comment=document.getElementById("comment").value;
 		obj.pageNum=${pageNum};
-		alert(obj.comment);
+
 		
 		$.ajax({
 			type : "post",
@@ -48,7 +48,7 @@ $(document).ready(function() {
 		function test2(aaa){
 		
 			$("#form").html(aaa);
-			alert("성공");
+			
 			
 		}
 		function when(){

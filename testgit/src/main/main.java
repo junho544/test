@@ -69,7 +69,7 @@ public class main {
 		JSONObject json=new JSONObject();
 		json = (JSONObject) JSONValue.parse(data);
 		System.out.println("data="+data);
-		String comment="12345";
+		String comment=(String)json.get("comment");
 		
 		if(comment != null){
 			Boast_commentDTO commentDTO=new Boast_commentDTO();
@@ -84,14 +84,14 @@ public class main {
 			if (pageNum == null) {
 				pageNum = "1";
 			}
-			int pageSize = 5;
+			int pageSize = 100;
 			int currentPage = Integer.parseInt(pageNum);
 			int startRow = (currentPage - 1) * pageSize + 1;
 			int endRow = currentPage * pageSize;
 			int count = 0;
 			int number = 0;
 			List articleList=null;
-			count = (Integer) sqlMap.queryForObject("B_commentcount");
+			count = (Integer)sqlMap.queryForObject("B_commentcount");
 			HashMap<String, Integer> map = new HashMap<String, Integer>();
 			map.put("startRow", startRow);
 			map.put("endRow", endRow);
