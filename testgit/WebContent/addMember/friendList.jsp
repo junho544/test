@@ -30,7 +30,7 @@ function retext(thefield){
 
 </script>
 
-<div id="ddd">
+
 <script>
 /* var list1 = new Array();
 <c:forEach items="${friendInfor}" var="item1">
@@ -48,11 +48,15 @@ for ( var i = 0; i < list1.length; i++) {
 var count=0;
 
 function chat(id,fid,num,test){
-
-	
-		
-		
-	alert("1");
+count++;
+alert(fid);
+	/* var obj	= document.getElementById("test");
+	var obj2	= document.getElementById("return2");
+	var obj3	= document.getElementById("apa");
+	 ajax 하나 더 만들어서 오른쪽 전체를 새로고침시킴 
+	obj.setAttribute("id", count); 
+	obj2.setAttribute("id", count); 
+	obj3.setAttribute("value", count);  */
 	var my_num = '${userinfor.num}';
 	var user_friend = my_num+num;
 	var friend_user = num+my_num;
@@ -62,46 +66,31 @@ function chat(id,fid,num,test){
 	$.ajax({
 
 	type:"post",
-	url :"chat.now?id="+id+"&friend_id="+fid+"&user_friend="+user_friend+"&friend_user="+friend_user,
+	url :"chat.now?id="+id+"&count="+count+"&friend_id="+fid+"&user_friend="+user_friend+"&friend_user="+friend_user,
 	
 	success:accpt,
 	error:error
 		
 	}); 
 	
-	}
 	
-	    
-	 
-
-
-
-
 function accpt(bbb){
 	
-	$("#return2").html(bbb);
-	
-	reload();
-	
+	$('#return2').html(bbb);
 	
 }
 function error(){
-	alert("수락에러");
+	alert("대화방에러");
 }
-
-function reload(){
-	$("#test").load();
-	
 }
-setInterval('reload()', 1000); 
 </script>
-</div>
+
  
  
 	<div id="kyung">
  	
  	<div id="return2">그림/배너<br />
-  
+  		<input type="text" id="hogo" value="${count}"/>
  	</div>
  	</div>
  	
@@ -155,9 +144,9 @@ setInterval('reload()', 1000);
     <li><a >쪽지보내기</a></li>  
     <li><a >프로필보기</a></li>
     
-   
-    <li ><a id="test"onclick="chat('${sessionScope.memId}','${friend.id}','${friend.num}','${test}');">대화시작</a></li>
-
+  
+    <li ><a id="test"onclick="chat('${sessionScope.memId}','${friend.id}','${friend.num}',hogo.value);">대화시작${i.count }</a></li>
+											
   </ul>
   </div>
     	  <font size="1">${friend.talk} 
@@ -165,11 +154,10 @@ setInterval('reload()', 1000);
     	</c:forEach>
     	</table>
     	</div>
-		 </div>   
+		 </div>
+		 
 	
-	
-	<%-- <a id="foo${test}" >클릭</a> --%>
-	<%-- <input type="hidden" value="hid" id="check${test}" /> --%>
+
 	</div>
 </div>  
 
@@ -239,8 +227,7 @@ setInterval('reload()', 1000);
 	
 	</c:forEach> --%>
 
-
-
+   
 
 
     

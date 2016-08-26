@@ -1,5 +1,7 @@
 package addMember;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,17 +33,55 @@ public class chat {
 		String friend_id = request.getParameter("friend_id");
 		
 		int bb = 1;
+		String count = request.getParameter("count");
+		System.out.println(count);
+		request.setAttribute("count", count);
+		
 		request.setAttribute("bb", new Integer(bb));
 		request.setAttribute("friend_user", friend_user);
 		request.setAttribute("user_friend", user_friend);
 		request.setAttribute("friend_id", friend_id);
 		request.setAttribute("id", id);
+		
 		return "/addMember/returnAjax_chat.jsp";
 	}
 	
 	
+	@RequestMapping("hhh.now")
+	public String hhh( HttpServletRequest request,HttpSession session){
+		nowDTO dto = new nowDTO();
+		List <nowDTO>friendInfor = new ArrayList();
+		
+		String id = (String)session.getAttribute("memId");
+		dto.setId(id);
+		nowDTO userinfor = (nowDTO)sqlMap.queryForObject("sampleSQL.userinfor", dto);
+		List friendList = (List)sqlMap.queryForList("sampleSQL.friendList",dto);
+		
+		
+		for(int i =0; i<friendList.size();i++){
+		
+		nowDTO app = new nowDTO();
+		app.setId(((Now.chat.nowDTO) friendList.get(i)).getFriend_id());
+		nowDTO friend = (nowDTO)sqlMap.queryForObject("sampleSQL.userinfor", app);
+		/*System.out.println(friend.getTalk());*/
+		friendInfor.add(friend);
+		
+		}
+		
+		
+		request.setAttribute("friendInfor",friendInfor);
+		request.setAttribute("userinfor",userinfor);
+		
+		
+		
+		String count = request.getParameter("count");
+		System.out.println(count);
+		request.setAttribute("count", count);
+		return "/addMember/returnAjax_friendlist.jsp";
+	}}
 	
 	
 	
 	
-}
+	
+
