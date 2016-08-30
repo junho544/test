@@ -6,7 +6,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <script src=http://code.jquery.com/jquery-1.11.3.min.js></script>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-
+<html>
+<head>
 
 <script>
 
@@ -83,11 +84,6 @@ url = "/testgit/talk.now";
 }
 
 </script>
-
-
-
-<html>
-<head>
     <!-- Bootstrap Core CSS -->
     <link href="/testgit/css/bootstrap.min.css" rel="stylesheet">
     <link href="/testgit/css/business-casual.css" rel="stylesheet">

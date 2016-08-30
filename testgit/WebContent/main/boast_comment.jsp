@@ -3,8 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
-<table>
 
+
+
+<table>
 <c:forEach var="list" items="${list}">
 <tr>
 <td>${list.nickname}</td><td>${list.reg_date}</td><td></td>

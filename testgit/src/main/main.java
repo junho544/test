@@ -56,7 +56,7 @@ public class main {
 	
 	
 	
-	@RequestMapping(value="boast_comment.now")
+	@RequestMapping(value="/boast_comment.now")
 	public String commentBoard( HttpServletRequest request,HttpSession session,@RequestBody String data) throws Exception {
 		
 		
