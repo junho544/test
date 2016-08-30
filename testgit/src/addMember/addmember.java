@@ -161,4 +161,16 @@ public class addmember {
 		
 		return "/addMember/friendList.jsp";
 	}
+	
+	@RequestMapping("addmember_ajax_infor.now")
+	public String mainAjaxinfor(nowDTO dto , HttpServletRequest request){
+		String id=request.getParameter("id");
+		
+		nowDTO userinfor = (nowDTO)sqlMap.queryForObject("sampleSQL.userinfor", dto);
+		
+		request.setAttribute("userinfor", userinfor);
+		
+		return "/addMember/returnAjax_write.jsp";
+	}
+	
 }

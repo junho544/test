@@ -78,7 +78,23 @@ public class chat {
 		System.out.println(count);
 		request.setAttribute("count", count);
 		return "/addMember/returnAjax_friendlist.jsp";
-	}}
+	}
+	
+
+	@RequestMapping("message.now")
+	public String aas( HttpServletRequest request,HttpSession session){
+		String msg = request.getParameter("msg");
+		String friend_id=request.getParameter("friend_id");
+
+		return "/addMember/returnAjax_chat.jsp";
+	}
+	
+
+	
+
+
+
+}
 	
 	
 	

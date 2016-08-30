@@ -15,7 +15,27 @@
 
 
 <link rel="stylesheet" type="text/css" href="/testgit/css/main/main.css">
+<style>
+#write2 {
+ position:absolute;
+ display:none;
+ background-color:#ffffff;
+ border:solid 2px #d0d0d0;
+ width:450px;
+ height:340px;
+ padding:10px;
+ cursor: pointer;
+ }
+/*  #close{
 
+color:red;
+width:450px;
+height:50px;
+position: relative;
+left: 5px; 
+top: -15px
+ } */
+ </style>
 
 <script>
 function clearText(thefield){
@@ -25,28 +45,17 @@ function clearText(thefield){
 function retext(thefield){
 		thefield.value = "친구검색하기/자동완성"
 	} 	
+$(document).keydown(function(event) {
+	if (event.keyCode == 27) {
+		document.getElementById('write2').style.display='none';
+	}
 	
-	
-
+	});
 </script>
 
 
 <script>
-/* var list1 = new Array();
-<c:forEach items="${friendInfor}" var="item1">
-
-list1.push("${item1.id}");
-
-</c:forEach>
-var i=22;
-for ( var i = 0; i < list1.length; i++) {
-   
-    var i = list1[i];
-  	
-} */
-
 var count=0;
-
 function chat(id,fid,num,test){
 count++;
 alert(fid);
@@ -85,12 +94,35 @@ function error(){
 }
 </script>
 
+<script>
+function member(id){
+	 this.popid=id;
+	    $.ajax({
+	        type: "post",
+	        url : "addmember_ajax_infor.now?id="+popid,
+	        success: popup,	// 페이지요청 성공시 실행 함수
+	        error: whenError	//페이지요청 실패시 실행함수
+		});
+	}
+	function popup(ccc){	// 요청성공한 페이지정보가 aaa 변수로 콜백된다.		
+		$("#returninfor").html(ccc);
+	}
+	function whenError(){
+	  alert("에러");
+	}
+</script>
+
+
+
+
+
+
  
  
 	<div id="kyung">
  	
  	<div id="return2">그림/배너<br />
-  		<input type="text" id="hogo" value="${count}"/>
+  		
  	</div>
  	</div>
  	
@@ -141,11 +173,11 @@ function error(){
     <b>${friend.nickname}</b>
   <span class="caret"></span></button>
   <ul class="dropdown-menu">  
-    <li><a >쪽지보내기</a></li>  
+    <li><a class="write" onclick="member('${friend.id}')">쪽지보내기</a></li>  
     <li><a >프로필보기</a></li>
     
   
-    <li ><a id="test"onclick="chat('${sessionScope.memId}','${friend.id}','${friend.num}',hogo.value);">대화시작${i.count }</a></li>
+    <li ><a id="test"onclick="chat('${sessionScope.memId}','${friend.id}','${friend.num}');">대화시작</a></li>
 											
   </ul>
   </div>
@@ -162,73 +194,33 @@ function error(){
 </div>  
 
 
+<script type="text/javascript">
+//-- 버튼 클릭시 버튼을 클릭한 위치 근처에 레이어 생성 --//
 
-<!-- 
-<script>
- function chat(){
-	 	var id =  $('#check${test}').val() ; 
-		alert(id);
-		var bb='${test2}';
-		alert(bb);
-			
-			
-		var my_num = '${userinfor.num}';
-		var user_friend = my_num+num;
-		var friend_user = num+my_num;
-		
-		
-		$.ajax({
-		type:"post",
-		url :"chat.now?id="+id+"&friend_id="+fid+"&user_friend="+user_friend+"&friend_user="+friend_user,
-		
-		success:accpt,
-		error:error
-			
-		});}
-
-
-	function accpt(bbb){
-		$("#return2").html(bbb);
-		
-	}
-	function error(){
-		alert("수락에러");
-	}
-
-	$(document).ready(function() {
-		  $('#foo${test2}').bind('click', function() {
-			
-		    doSomething();  
-		  });
-		});
-		 
-		var doSomething = function(){
-		  $('#foo${test2}').unbind('click');
-		  	 chat();
-		 done(function() {
-		    $('#foo').bind('click', function() {
-		    	alert("3");
-		      doSomething();  
-		    });    
-		  });
-		}
-
+$('.write').click(function(e) {
+ var divTop = e.clientY - 20; //상단 좌표
+ var divLeft = e.clientX - 40; //좌측 좌표
+ $('#write2').css({
+     "top": divTop
+     ,"left": divLeft
+     , "position": "absolute"
+ }).show();
+});
 </script>
 
- -->
 
 
-<%-- 	<c:forEach items="${friendInfor}" var="item1">
-	list1.push("${item1.id}");
-	if(fid=='${item1.id}'){
-	$('#${item1.id}').removeAttr('onclick');
-	}
-	var s = '#${item1.id}';
-	
-	</c:forEach> --%>
+<div id="write2">
+<div id="returninfor"></div>
+<div style="position:absolute;top:5px;right:5px">
+<span onClick="javascript:document.getElementById('write2').style.display='none'" style="cursor:pointer;font-size:1.5em" title="닫기">X</span>
 
-   
+</div>
 
+</div>
 
-    
-    
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+ <script>
+	$(function() {	//팝업드래그
+		$("#write2").draggable();	});
+ </script>

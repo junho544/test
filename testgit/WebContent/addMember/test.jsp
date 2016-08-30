@@ -87,6 +87,7 @@ $('.imgSelect').click(function(e) {
 <div id="return">요기~</div>
 <div style="position:absolute;top:5px;right:5px">
 <span onClick="javascript:document.getElementById('divLangSelect').style.display='none'" style="cursor:pointer;font-size:1.5em" title="닫기">X</span>
+ddd
 </div>
 </div>
 
