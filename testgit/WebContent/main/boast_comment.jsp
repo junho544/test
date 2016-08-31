@@ -35,15 +35,15 @@
 				<ul class="pagination">
 
 					<c:if test="${startPage>10 }">
-						<a href="boast_content.now?pageNum=${startPage - 10}&num=${num}">[이전]</a>
+						<a href="boast_content.now?pageNum=${startPage - 10}">[이전]</a>
 					</c:if>
 
 					<c:forEach var="i" begin="${startPage}" end="${endPage}">
-						<a href="boast_content.now?pageNum=${i}&num=${num}">${i}</a>
+						<a href="boast_content.now?pageNum=${i}">${i}</a>
 					</c:forEach>
 
 					<c:if test="${endPage<pageCount }">
-						<a href="boast_content.now?pageNum=${startPage + 10 }&num=${num}">[다음]</a>
+						<a href="boast_content.now?pageNum=${startPage + 10 }">[다음]</a>
 					</c:if>
 
 					<c:if test="${sessionScope.memNickname != null}">

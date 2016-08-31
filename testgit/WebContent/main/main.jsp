@@ -42,7 +42,7 @@ $(document).ready(function() {
 		$.ajax({
 			type : "post",
 			url : "boast_comment.now",
-			data : JSON.stringify(obj),
+			data : obj,
 			success :test2,
 			error : when
 		});
@@ -53,7 +53,7 @@ $(document).ready(function() {
 			
 		}
 		function when(){
-			alert("에러");
+			
 		}
 	});	
 	

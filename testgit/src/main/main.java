@@ -69,7 +69,8 @@ public class main {
 		JSONObject json=new JSONObject();
 		json = (JSONObject) JSONValue.parse(data);
 		System.out.println("data="+data);
-		String comment=(String)json.get("comment");
+		String comment = request.getParameter("comment");
+		
 		
 		if(comment != null){
 			Boast_commentDTO commentDTO=new Boast_commentDTO();
@@ -79,7 +80,7 @@ public class main {
 			sqlMap.insert("insertB_comment",commentDTO);
 			}	
 		
-			String pageNum ="1";
+		String pageNum = request.getParameter("pageNum");
 			
 			if (pageNum == null) {
 				pageNum = "1";
