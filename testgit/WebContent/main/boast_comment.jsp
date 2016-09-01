@@ -2,21 +2,57 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <html>
+<link href="/testgit/css/business-casual.css" rel="stylesheet">
 
 
 
-<table>
+<table border="0" width="1100">
 <c:forEach var="list" items="${list}">
 <tr>
-<td>${list.nickname}</td><td>${list.reg_date}</td><td></td>
+<td rowspan="2" height="100">
+
+<c:choose>
+<c:when test="${list.nickname=='정연쓰'}">
+<img src="/testgit/image/suzy.png">
+</c:when>
+
+
+<c:when test="${list.nickname=='park'}">
+<img src="/testgit/image/hyun.jpg">
+</c:when>
+
+<c:otherwise>
+<img src="/testgit/image/zico.png">
+</c:otherwise>
+</c:choose>
+
+
+
+</td>
+<td width="830" height="10">
+&nbsp;&nbsp;&nbsp;<strong>${list.nickname}</strong>
+</td>
+<td align="right">
+${list.reg_date}
+</td>
 </tr>
 <tr>
-<td colspan="2">${list.boast_comment}</td>
-	<td><c:if test="${mem.nickname==list.nickname}">
-		<a href="window.location='deletecomment.now?nickname=${mem.nickname}'"></a>
-	</c:if></td>
+<td colspan="2" rowspan="2">
+
+${list.boast_comment}
+
+</td>
 </tr>
+<tr>
+<td>
+<p>&nbsp;</p>
+</td>
+</tr>
+
+
+
 </c:forEach>
 </table>
 <c:if test="${count> 0 }">
