@@ -25,7 +25,6 @@ function whenError(){
 
 
 
-
 <div id="returnADD"><!-- add_search 체크해주는 ajax --></div>
  ${userinfor.id}<br />
  ${userinfor.nickname} <br />	

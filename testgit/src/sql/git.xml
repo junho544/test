@@ -67,7 +67,12 @@
 				
 	</insert>
 	
-	
+	<select id="msgcheck" parameterClass="Now.chat.nowDTO"  resultClass="Now.chat.nowDTO">
+		select * from nowmsg where friend_id=#id#
+	</select>
+	<select id="msgNum" parameterClass="Now.chat.nowDTO"  resultClass="int">
+		select count(*) from nowmsg where friend_id=#id#
+	</select>
 	<!-- <create id="createChatRoom">
 	
 	</create> -->

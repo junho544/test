@@ -108,7 +108,14 @@ ddd
 <a class="imgSelect" onclick="openCreate(this.form)">친구리스트</a>
 
 
-
+<br />
+쪽지알람
+<br >
+<c:forEach var="msg" items="${msg}">
+<br >${msg.msg}
+</c:forEach>
+<br />
+${msgNum}
 <script language="JavaScript">
     function openCreate() {
 url = "/testgit/friendlist.now";

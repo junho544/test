@@ -23,11 +23,18 @@ public class addmember {
 	private SqlMapClientTemplate sqlMap;
 	
 	@RequestMapping("addmember.now")
-	public String main(memberDTO dto , HttpServletRequest request,HttpSession session){
+	public String main(nowDTO msgDTO ,memberDTO dto , HttpServletRequest request,HttpSession session){
 		String id=(String)session.getAttribute("memId");
 		dto.setId(id);
 		List <memberDTO> user = (List)sqlMap.queryForList("sampleSQL.userlist");
+		msgDTO.setId(id);
+		List msg = (List)sqlMap.queryForList("sampleSQL.msgcheck",msgDTO);
+		int msgNum = 
+	    (Integer)sqlMap.queryForObject("sampleSQL.msgNum",msgDTO);
+		
+		request.setAttribute("msgNum", msgNum);
 		request.setAttribute("userlist", user);
+		request.setAttribute("msg", msg);
 		return "/addMember/test.jsp";
 	}
 	@RequestMapping("addmember_ajax.now")
