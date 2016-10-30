@@ -34,7 +34,7 @@ public class chat {
 		
 		int bb = 1;
 		String count = request.getParameter("count");
-		System.out.println(count);
+		
 		request.setAttribute("count", count);
 		
 		request.setAttribute("bb", new Integer(bb));
@@ -75,24 +75,37 @@ public class chat {
 		
 		
 		String count = request.getParameter("count");
-		System.out.println(count);
+		
 		request.setAttribute("count", count);
 		return "/addMember/returnAjax_friendlist.jsp";
 	}
 	
 
 	@RequestMapping("message.now")
-	public String aas( HttpServletRequest request,HttpSession session){
+	public String aas(nowDTO dto, HttpServletRequest request,HttpSession session){
 		String msg = request.getParameter("msg");
 		String friend_id=request.getParameter("friend_id");
+		String id = (String)session.getAttribute("memId");
+		
+		dto.setId(friend_id);
+		nowDTO friendinfor = (nowDTO)sqlMap.queryForObject("sampleSQL.userinfor", dto);
+		nowDTO msg_infor = new nowDTO();
 
+		msg_infor.setId(id);
+		
+		nowDTO userinfor = (nowDTO)sqlMap.queryForObject("sampleSQL.userinfor", msg_infor);
+		
+		msg_infor.setNickname(userinfor.getNickname());
+		msg_infor.setEmail(userinfor.getEmail());
+		msg_infor.setImage(userinfor.getFriend_image());
+		msg_infor.setFriend_id(friendinfor.getId());
+		msg_infor.setFriend_nickname(friendinfor.getNickname());
+		msg_infor.setFriend_email(friendinfor.getEmail());
+		msg_infor.setFriend_image(friendinfor.getFriend_image());
+		msg_infor.setMsg(msg);
+		sqlMap.insert("sampleSQL.msg",msg_infor);
 		return "/addMember/returnAjax_chat.jsp";
 	}
-	
-
-	
-
-
 
 }
 	

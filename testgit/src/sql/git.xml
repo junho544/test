@@ -61,6 +61,13 @@
 	delete addmember_wait where id=#id# and friend_id=#friend_id#
 	</delete>
 	
+	<insert id="msg" parameterClass="Now.chat.nowDTO">
+	insert into nowmsg (id,nickname,email,image,friend_id,friend_nickname,friend_email,friend_image,msg)
+						values(#id#,#nickname#,#email#,#image#,#friend_id#,#friend_nickname#,#friend_email#,#friend_image#,#msg#)
+				
+	</insert>
+	
+	
 	<!-- <create id="createChatRoom">
 	
 	</create> -->
