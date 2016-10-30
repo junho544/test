@@ -219,6 +219,10 @@ url = "/testgit/talk.now";
                         <div class="row">
             <div class="box">
                 <div class="col-lg-12">
+                <button style="margin-bottom:30px;" onclick="test2(aaa)" class="btn btn-primary btn-lg btn-block">
+                
+                <span class="glyphicon glyphicon-send"></span>
+                                새 소식 받아오기</button>
                 
 
 
