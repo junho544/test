@@ -34,7 +34,12 @@ cursor: pointer;
   
 <font color=red>${sessionScope.memId}</font>
 <c:forEach var="userlist" items="${userlist}">
+  
+  
+    <c:if test="${sessionScope.memId!=userlist.id}">
+  
    <div class='imgSelect' onclick="member('${userlist.id}')">${userlist.nickname}</div><br />
+   </c:if>
 </c:forEach>
 
  
@@ -87,7 +92,7 @@ $('.imgSelect').click(function(e) {
 <div id="return">요기~</div>
 <div style="position:absolute;top:5px;right:5px">
 <span onClick="javascript:document.getElementById('divLangSelect').style.display='none'" style="cursor:pointer;font-size:1.5em" title="닫기">X</span>
-ddd
+
 </div>
 </div>
 

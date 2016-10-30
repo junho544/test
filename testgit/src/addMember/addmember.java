@@ -26,7 +26,10 @@ public class addmember {
 	public String main(nowDTO msgDTO ,memberDTO dto , HttpServletRequest request,HttpSession session){
 		String id=(String)session.getAttribute("memId");
 		dto.setId(id);
+		List <nowDTO> friendList  = new ArrayList();
+		
 		List <memberDTO> user = (List)sqlMap.queryForList("sampleSQL.userlist");
+
 		msgDTO.setId(id);
 		List msg = (List)sqlMap.queryForList("sampleSQL.msgcheck",msgDTO);
 		int msgNum = 
