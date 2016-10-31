@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+
 <html>
 <link href="/testgit/css/business-casual.css" rel="stylesheet">
 
@@ -31,18 +32,33 @@
 
 
 </td>
-<td width="830" height="10">
+<td width="790" height="10">
 &nbsp;&nbsp;&nbsp;<strong>${list.nickname}</strong>
 </td>
-<td align="right">
+<td>
 ${list.reg_date}
 </td>
+
+<td width="40">
+<c:if test="${list.nickname==member}">
+<button type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
+</c:if>
+
+</td>
+
+
+
 </tr>
 <tr>
-<td colspan="2" rowspan="2">
+<td colspan="4" rowspan="2">
 
 ${list.boast_comment}
 
+</td>
+</tr>
+<tr>
+<td>
+<p>&nbsp;</p>
 </td>
 </tr>
 <tr>

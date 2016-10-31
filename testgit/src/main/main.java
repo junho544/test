@@ -63,6 +63,7 @@ public class main {
 		String id=(String)session.getAttribute("memId");
 		
 		String nickname=(String)sqlMap.queryForObject("sampleSQL.getNick", id);
+		System.out.println("nickname==>"+nickname);
 
 //*****************************************************************
 		
@@ -109,6 +110,7 @@ public class main {
 			request.setAttribute("number", new Integer(number));
 			request.setAttribute("pageSize", new Integer(pageSize));
 			request.setAttribute("list",articleList);
+			request.setAttribute("member",nickname);
 			
 		return "/main/boast_comment.jsp";
 
