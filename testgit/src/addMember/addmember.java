@@ -182,5 +182,6 @@ public class addmember {
 		
 		return "/addMember/returnAjax_write.jsp";
 	}
+
 	
 }

@@ -114,13 +114,36 @@ $('.imgSelect').click(function(e) {
 
 
 <br />
-쪽지알람
-<br >
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").toggle();
+    });
+});
+</script>
+
+<button>쪽지확인하기</button>
+
+<p style="display:none;">
 <c:forEach var="msg" items="${msg}">
-<br >${msg.msg}
+<a onclick="openCreate2(${msg.id},${msg.friend_id})">
+<b>${msg.nickname}</b>님으로부터 쪽지가 도착했습니다.
+</a>
+
 </c:forEach>
 <br />
-${msgNum}
+쪽지개수${msgNum}</p>
+
+
+
+
 <script language="JavaScript">
     function openCreate() {
 url = "/testgit/friendlist.now";
@@ -128,6 +151,14 @@ url = "/testgit/friendlist.now";
         
         window.open(url, "create", 'left='+(screen.availWidth-625)/2+',top='+(screen.availHeight-500)/2+', width=625px,height=650px');
     }
+    
+    function openCreate2(id,fid) {
+    	
+ 	url = "messagestore.now?id="+id+"&friend_id="+fid;
+    	        
+    	        
+    	        window.open(url, "create1", 'left='+(screen.availWidth-625)/2+',top='+(screen.availHeight-500)/2+', width=625px,height=650px');
+    	    }
 </script>
 
 

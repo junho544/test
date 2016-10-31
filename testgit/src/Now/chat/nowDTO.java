@@ -13,7 +13,14 @@ public class nowDTO {
 	private String talk;
 	private int num;
 	private String msg;
+	private String regdate;
 	
+	public String getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
+	}
 	public String getMsg() {
 		return msg;
 	}
